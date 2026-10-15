@@ -18,20 +18,7 @@
   --f-display:"Instrument Serif", "Iowan Old Style", Georgia, serif;
   --f-body:"Archivo", "Helvetica Neue", Arial, sans-serif;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#171412; --fg:#EFE8E0; --muted:#B3A598; --line:#3A312B;
-    --band:#2A1C15; --band-fg:#EFE8E0; --band-muted:#B9A391;
-    --card:#211C19; --field:#1C1816; --lav-deep:#C9B9E6; --sand:#2A2420;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#171412; --fg:#EFE8E0; --muted:#B3A598; --line:#3A312B;
-  --band:#2A1C15; --band-fg:#EFE8E0; --band-muted:#B9A391;
-  --card:#211C19; --field:#1C1816; --lav-deep:#C9B9E6; --sand:#2A2420;
-  color-scheme:dark;
-}
+:root{color-scheme:light}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
