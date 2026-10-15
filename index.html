@@ -131,6 +131,8 @@ h2 em{font-style:italic}
 .perks{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-direction:column;gap:12px}
 .perks li{display:flex;gap:12px;align-items:baseline;font-size:16px}
 .perks li::before{content:"";flex:none;width:18px;height:2px;background:var(--lav);transform:translateY(-4px)}
+.tally-wrap{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:24px 24px 12px;min-width:0}
+.tally-wrap iframe{display:block;width:100%;border:0}
 form{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:32px;display:flex;flex-direction:column;gap:22px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .field{display:flex;flex-direction:column;gap:8px;min-width:0}
@@ -281,71 +283,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;
       </div>
 
       <div>
-        <form id="signup" novalidate>
-          <div class="row">
-            <div class="field"><label for="fname">First name</label><input id="fname" name="fname" type="text" autocomplete="given-name" required></div>
-            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-          </div>
-
-          <fieldset>
-            <legend class="legend">Your hair right now</legend>
-            <div class="chips">
-              <label><input type="radio" name="hair" id="hair-relaxed" value="relaxed" required><span>Relaxed</span></label>
-              <label><input type="radio" name="hair" id="hair-texlax" value="texlaxed"><span>Texlaxed / texturized</span></label>
-              <label><input type="radio" name="hair" id="hair-keratin" value="keratin"><span>Keratin or smoothing treatment</span></label>
-              <label><input type="radio" name="hair" id="hair-trans" value="transitioning"><span>Transitioning</span></label>
-              <label><input type="radio" name="hair" id="hair-other" value="other"><span>Other</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend class="legend">Touch-ups <span class="opt">optional</span></legend>
-            <div class="chips">
-              <label><input type="radio" name="touchup" id="tu-salon" value="salon"><span>At the salon</span></label>
-              <label><input type="radio" name="touchup" id="tu-home" value="home"><span>At home</span></label>
-              <label><input type="radio" name="touchup" id="tu-both" value="both"><span>Both</span></label>
-            </div>
-          </fieldset>
-
-          <div class="row">
-            <div class="field">
-              <label for="freq">How often you touch up <span class="opt">optional</span></label>
-              <select id="freq" name="freq"><option value="">Choose one</option><option>Every 6 to 8 weeks</option><option>Every 9 to 12 weeks</option><option>Every 3 to 6 months</option><option>Less often</option></select>
-            </div>
-            <div class="field">
-              <label for="spend">Monthly hair product spend <span class="opt">optional</span></label>
-              <select id="spend" name="spend"><option value="">Choose one</option><option>Under $25</option><option>$25 to $50</option><option>$50 to $100</option><option>Over $100</option></select>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="wtp">What would you expect to pay for a hair oil made for your hair? <span class="opt">optional</span></label>
-            <select id="wtp" name="wtp"><option value="">Choose one</option><option>Under $15</option><option>$15 to $25</option><option>$25 to $35</option><option>Over $35</option></select>
-          </div>
-
-          <div class="field">
-            <label for="frustration">Your biggest hair frustration right now <span class="opt">optional</span></label>
-            <textarea id="frustration" name="frustration" placeholder="Breakage at the new growth, dryness, products that feel too heavy..."></textarea>
-          </div>
-
-          <fieldset>
-            <legend class="legend">Want to be a beta tester? <span class="opt">optional</span></legend>
-            <div class="chips">
-              <label><input type="radio" name="beta" id="beta-yes" value="yes"><span>Yes, count me in</span></label>
-              <label><input type="radio" name="beta" id="beta-no" value="no"><span>Not right now</span></label>
-            </div>
-          </fieldset>
-
-          <p class="err" id="err" role="alert"></p>
-          <button class="btn lav" type="submit">Get on the list</button>
-          <p class="fine">We'll only email you about STRAND. Unsubscribe anytime.</p>
-        </form>
-
-        <div class="done" id="done" hidden>
-          <span class="status">You're on the list</span>
-          <h3>Welcome, <span id="who">friend</span>.</h3>
-          <p>We'll send development updates, early looks, and first access. Know someone who relaxes? Send her this.</p>
-          <div class="share"><code id="link">strand-haircare.com</code><button class="btn ghost" type="button" id="copy">Copy link</button></div>
+        <div class="tally-wrap">
+          <iframe id="tally" data-src="https://tally.so/embed/q5ZBPY" loading="lazy" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" title="Get on the list"></iframe>
+          <p class="fine">We'll only email you about STRAND. Unsubscribe anytime. Trouble with the form? <a href="https://tally.so/r/q5ZBPY" target="_blank" rel="noopener">Open it here</a>.</p>
         </div>
       </div>
     </div>
@@ -362,23 +302,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;
 
 <script>
 (function(){
-  var form=document.getElementById('signup'), err=document.getElementById('err');
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var name=form.fname.value.trim(), email=form.email.value.trim(), hair=form.querySelector('input[name=hair]:checked');
-    if(!name){err.textContent='Add your first name so we know what to call you.';form.fname.focus();return;}
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){err.textContent='Check your email address. It should look like name@example.com.';form.email.focus();return;}
-    if(!hair){err.textContent='Pick the option closest to your hair right now.';return;}
-    err.textContent='';
-    document.getElementById('who').textContent=name;
-    form.hidden=true;
-    var d=document.getElementById('done'); d.hidden=false; d.scrollIntoView({behavior:'smooth',block:'center'});
-  });
-  document.getElementById('copy').addEventListener('click',function(){
-    var b=this, t='https://strand-haircare.com';
-    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('link'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';}
-    try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';},sel);}catch(x){sel();}
-  });
+  var f=document.getElementById('tally');
+  var q=new URLSearchParams(window.location.search);
+  q.set('alignLeft','1'); q.set('hideTitle','1'); q.set('transparentBackground','1'); q.set('dynamicHeight','1');
+  f.setAttribute('data-tally-src', f.getAttribute('data-src')+'?'+q.toString());
+  var sc=document.createElement('script'); sc.src='https://tally.so/widgets/embed.js';
+  sc.onload=function(){ if(window.Tally){ Tally.loadEmbeds(); } };
+  sc.onerror=function(){ f.src=f.getAttribute('data-tally-src'); };
+  document.body.appendChild(sc);
 })();
 </script>
 </body>
