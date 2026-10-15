@@ -75,6 +75,13 @@ h2 em{font-style:italic}
 .texture{width:220px;max-width:100%;height:64px}
 .two p{font-family:var(--f-display);font-style:italic;font-size:clamp(24px,3vw,34px);color:var(--band-fg);margin:0;line-height:1.15}
 
+.gaps{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid rgba(239,232,224,.18);padding-top:28px}
+.gaps div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.gaps p{margin:0;font-family:var(--f-display);font-size:24px;line-height:1.15;color:var(--band-fg)}
+.story .big{font-size:clamp(36px,4.8vw,62px)}
+.story .sig{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-stretch:115%;color:var(--band-fg)}
+@media (max-width:860px){.gaps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.gaps{grid-template-columns:1fr}}
 /* Product */
 .product .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
 .status{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--lav-deep);font-stretch:112%}
@@ -175,9 +182,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;
   <section class="hero" aria-labelledby="h1">
     <div class="wrap">
       <div>
-        <div class="eyebrow">Hair care for chemically straightened hair</div>
-        <h1 id="h1">Hair is a journey. <em>It takes time.</em></h1>
-        <p class="lede">STRAND is a short routine built for relaxed and chemically straightened hair. It starts with <strong>Dream Hair Oil</strong>: light, clean shine for the hair you actually have.</p>
+        <div class="eyebrow">Care for your chemically straightened hair</div>
+        <h1 id="h1">Haircare designed <em>for her choice.</em></h1>
+        <p class="lede">A simplified routine for hair care between touch-ups. Built with a stylist of ten years, starting with <strong>Dream Hair Oil</strong>.</p>
         <div class="cta-row">
           <a class="btn lav" href="#list">Get on the list</a>
           <small>Development updates, early looks, and hair education.</small>
@@ -198,14 +205,16 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;
     <div class="wrap">
       <div>
         <div class="eyebrow">The problem</div>
-        <h2 id="h2p">She's settling for products not made for her. <em>Or building a routine from ten brands.</em></h2>
+        <h2 id="h2p">These chemicals make hair fragile. <em>No brand owns her care.</em></h2>
       </div>
-      <p>Haircare moved on to curls. Women who relax or chemically straighten were left with old drugstore formulas, heavy oils, and salon products meant for someone else's hair. So she mixes and matches, and hopes it holds until her next touch-up.</p>
+      <p>Straightening breaks bonds inside the hair. Breakage and dryness follow. She relaxes for convenience and practicality, then spends years searching for products built for what comes after.</p>
     </div>
     <div class="wrap">
-      <div class="two">
-        <svg class="texture" viewBox="0 0 220 64" aria-hidden="true"><path d="M2 32 C 12 8, 22 56, 32 32 S 52 8, 62 32 S 82 56, 92 32 S 104 20, 112 32 L 218 32" fill="none" stroke="#C8AD92" stroke-width="3" stroke-linecap="round"/></svg>
-        <p>Every strand holds two textures. Care for both.</p>
+      <div class="gaps">
+        <div><span class="eyebrow">Relaxer makers</span><p>Own the chemical, not the care.</p></div>
+        <div><span class="eyebrow">Legacy salon lines</span><p>Pro-focused and dated.</p></div>
+        <div><span class="eyebrow">Natural brands</span><p>Built for curls. Too heavy.</p></div>
+        <div><span class="eyebrow">Prestige repair</span><p>A splurge, not a routine.</p></div>
       </div>
     </div>
   </section>
@@ -216,7 +225,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;
         <span class="status">In development</span>
         <h2 id="h2o">Dream Hair Oil</h2>
         <p class="sub">For chemically straightened hair</p>
-        <p class="desc">A weightless finishing oil for relaxed lengths. Shine and softness without the heavy, greasy feel she gets from oils made for natural hair.</p>
+        <p class="desc">A weightless finishing oil for fragile, straightened lengths. Shine and softness without the heavy feel of oils made for curls.</p>
         <dl class="specs">
           <div><dt>Feel</dt><dd>Lightweight, never greasy</dd></div>
           <div><dt>Color</dt><dd>Soft lavender</dd></div>
@@ -227,7 +236,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;
       </div>
       <figure class="quote">
         <blockquote>"So clean you can basically eat it."</blockquote>
-        <cite>The brief from our stylist partner, who has relaxed hair for over a decade</cite>
+        <cite>The brief from my stylist of ten years</cite>
       </figure>
     </div>
   </section>
@@ -235,23 +244,26 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;
   <section class="routine" aria-labelledby="h2r">
     <div class="wrap">
       <div class="eyebrow">The routine</div>
-      <h2 id="h2r">Three products. <em>One card that tells you exactly what to do.</em></h2>
+      <h2 id="h2r">A simplified routine <em>for between touch-ups.</em></h2>
       <div class="steps">
-        <div class="step"><span class="when">Wash day</span><h3>Dream Shampoo</h3><p>Clarifies the scalp without stripping relaxed lengths. Light and silky.</p><span class="pill">Coming soon</span></div>
-        <div class="step"><span class="when">Wash day</span><h3>Dream Conditioner</h3><p>Slip for detangling where new growth meets relaxed hair. Rinses clean.</p><span class="pill">Coming soon</span></div>
-        <div class="step hero-step"><span class="when">Every day</span><h3>Dream Hair Oil</h3><p>A few drops on relaxed lengths for light, clean shine.</p><span class="pill">First up</span></div>
+        <div class="step"><span class="when">01 · Wash</span><h3>Dream Shampoo</h3><p>Gentle and clarifying. Cleans without stripping fragile lengths.</p><span class="pill">Coming soon</span></div>
+        <div class="step"><span class="when">02 · Wash</span><h3>Dream Conditioner</h3><p>Detangles fast, adds protein, and restores your hair's pH.</p><span class="pill">Coming soon</span></div>
+        <div class="step hero-step"><span class="when">03 · Finish</span><h3>Dream Hair Oil</h3><p>A few drops on straightened lengths for light, clean shine.</p><span class="pill">First up</span></div>
       </div>
-      <p class="card-line">Plus the STRAND routine card: what to use, when, and what to do the week before and after a touch-up.</p>
+      <p class="card-line">Wash with 01 and 02. Finish with 03. Premium, not prestige.</p>
     </div>
   </section>
 
   <section class="band story" aria-labelledby="h2s">
     <div class="wrap">
-      <h2 id="h2s" class="big">Time is the ultimate luxury. <em>We give you yours back.</em></h2>
+      <div>
+        <div class="eyebrow">Why STRAND</div>
+        <h2 id="h2s" class="big">"I couldn't find products built for it."</h2>
+      </div>
       <div class="copy">
-        <p><strong>The salon is great. Most of your hair's life happens at home.</strong> STRAND is built for those weeks between touch-ups, when you're on your own.</p>
-        <p>We're building it with a stylist who has kept relaxed hair long and healthy for years, and with the women who wear it. Founded by a woman who relaxes her own hair.</p>
-        <div class="dont" aria-label="How we talk about hair"><s>repair</s><s>manage</s><s>tame</s><span>time</span><span>journey</span><span>at home</span></div>
+        <p><strong>"I've relaxed my hair since I was about ten. Even with the budget to try everything, I couldn't find products built for it."</strong></p>
+        <p>Almost ten years ago I found a stylist with long, healthy, relaxed hair. Her custom method showed me it could work differently. STRAND turns that method into products you can use in the chair and at home.</p>
+        <p class="sig">Sarah Hollinger, Founder</p>
       </div>
     </div>
   </section>
@@ -282,7 +294,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;
 <footer>
   <div class="wrap">
     <a class="mark" href="#top" aria-label="STRAND home"><b>STRAND</b><i></i></a>
-    <span>Hair care for chemically straightened hair. Products in development and not yet for sale.</span>
+    <span>Care for your chemically straightened hair. Products in development and not yet for sale.</span>
     <span>&copy; 2026 STRAND</span>
   </div>
 </footer>
