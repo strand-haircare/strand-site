@@ -37,7 +37,7 @@ h2 em,h1 em{font-style:italic}
 /* Strand line */
 .strandline{padding-top:28px}
 .strandline .row{position:relative}
-.strandline svg{display:block;width:100%;height:auto;overflow:visible}
+.strandline svg{display:block;width:100%;height:clamp(54px,7.15vw,80px);overflow:visible}
 .strandline .cap{position:absolute;right:0;top:50%;transform:translateY(calc(-100% - 2px));background:var(--silk);padding-left:14px}
 
 /* Hero */
@@ -196,7 +196,7 @@ footer .mark i{height:3px}
   .mark b{font-size:19px}
   .stats,.specs{grid-template-columns:1fr}
   .heard{grid-template-columns:1fr}
-  .strandline .cap{display:none}
+  .strandline .cap{position:static;transform:none;display:block;padding:12px 0 0;background:none;font-size:10px;letter-spacing:.2em}
   .panel{border-radius:20px}
   .tally-wrap{padding:16px 14px 10px}
   .hero{padding-block:24px 72px}
