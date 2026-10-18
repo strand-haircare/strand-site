@@ -207,3 +207,7 @@ footer .mark i{height:3px}
 }
 
 .strandline .cap b{font-weight:700;color:var(--ink)}
+
+.hero-form{background:var(--card);border:1px solid var(--line);padding:22px 22px 12px;scroll-margin-top:90px;max-width:560px}
+.join-cta{align-self:center}
+.join-cta .btn{font-size:17px}
