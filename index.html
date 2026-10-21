@@ -300,6 +300,13 @@
   sc.onload=function(){ if(window.Tally){ Tally.loadEmbeds(); } };
   sc.onerror=function(){ f.src=f.getAttribute('data-tally-src'); };
   document.body.appendChild(sc);
+  try{ if(location.hash.length>1){ var t=document.querySelector(location.hash); if(t){
+    var fix=function(){ t.scrollIntoView({behavior:'instant',block:'start'}); };
+    var ro=new ResizeObserver(fix); ro.observe(f);
+    window.addEventListener('load',fix);
+    var stop=function(){ ro.disconnect(); };
+    setTimeout(stop,5000); ['wheel','touchstart','keydown'].forEach(function(e){ window.addEventListener(e,stop,{once:true,passive:true}); });
+  } } }catch(e){}
   var bar=document.getElementById('top-bar');
   window.addEventListener('scroll',function(){ bar.classList.toggle('scrolled', window.scrollY>10); },{passive:true});
 })();
