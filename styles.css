@@ -211,3 +211,12 @@ footer .mark i{height:3px}
 .hero-form{background:var(--card);border:1px solid var(--line);padding:22px 22px 12px;scroll-margin-top:90px;max-width:560px}
 .join-cta{align-self:center}
 .join-cta .btn{font-size:17px}
+
+/* Instagram */
+.ig{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-size:13px;font-weight:600;padding:8px 12px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);background:var(--card);transition:box-shadow .15s,transform .15s}
+.ig:hover{box-shadow:inset 0 0 0 1px var(--lav-deep);color:var(--lav-deep);transform:translateY(-1px)}
+.ig-btn{margin-top:14px;background:transparent;color:var(--silk);box-shadow:inset 0 0 0 1px var(--lav)}
+.ig-btn:hover{background:var(--lav);color:var(--ink)}
+.foot-ig{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-weight:600;text-decoration:none}
+.foot-ig:hover{color:var(--lav-deep)}
+@media (max-width:560px){.ig span{display:none}.ig{padding:9px}.navlinks{gap:10px}}
