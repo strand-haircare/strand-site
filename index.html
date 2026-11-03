@@ -108,7 +108,11 @@
         <div class="eyebrow">For chemically straightened hair</div>
         <h1 id="h1">Most oils were made for curls. <em>This one's made for yours.</em></h1>
         <p class="sub">Dream Hair Oil is a lightweight fine mist for chemically straightened hair. Softness and shine on your ends, without the grease.</p>
-        <div class="signup" id="join" data-where="hero"></div>
+        <div class="tally-wrap hero-form" id="join">
+          <div class="eyebrow" style="margin-bottom:6px">Get early access. Free, no payment.</div>
+          <iframe id="tally" data-src="https://tally.so/embed/q5ZBPY" width="100%" height="420" frameborder="0" marginheight="0" marginwidth="0" title="Get early access"></iframe>
+          <p class="fine">We'll only email you about STRAND. Trouble with the form? <a href="https://tally.so/r/q5ZBPY" data-utm target="_blank" rel="noopener">Open it here</a>.</p>
+        </div>
       </div>
       <div class="v2pic"><img src="img/dream-hair-oil.jpg" width="864" height="1184" alt="A bottle of STRAND Dream Hair Oil with a black fine-mist sprayer on a cream backdrop" fetchpriority="high"></div>
     </div>
@@ -190,7 +194,15 @@
   var q=new URLSearchParams(location.search), utm={};
   ['utm_source','utm_campaign','utm_content','utm_medium'].forEach(function(k){ if(q.get(k)) utm[k]=q.get(k); });
   var qs=new URLSearchParams(utm).toString();
-  var sc=document.createElement('script'); sc.src='https://tally.so/widgets/embed.js'; sc.async=true; document.head.appendChild(sc);
+  document.querySelectorAll('a[data-utm]').forEach(function(a){ if(qs) a.href+= (a.href.indexOf('?')>-1?'&':'?')+qs; });
+  var f=document.getElementById('tally'), p=new URLSearchParams(utm);
+  p.set('alignLeft','1'); p.set('hideTitle','1'); p.set('transparentBackground','1'); p.set('dynamicHeight','1');
+  f.setAttribute('data-tally-src', f.getAttribute('data-src')+'?'+p.toString());
+  var sc=document.createElement('script'); sc.src='https://tally.so/widgets/embed.js'; sc.async=true;
+  sc.onload=function(){ if(window.Tally){ Tally.loadEmbeds(); } };
+  sc.onerror=function(){ f.src=f.getAttribute('data-tally-src'); };
+  document.head.appendChild(sc);
+  window.addEventListener('message',function(e){ try{ if(typeof e.data==='string' && e.data.indexOf('Tally.FormSubmitted')>-1){ joined(); } }catch(err){} });
   var tpl=document.getElementById('signup-tpl');
   function joined(){
     document.body.classList.add('joined');
