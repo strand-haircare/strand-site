@@ -3,15 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>STRAND Haircare | Dream Hair Oil</title>
-<meta name="description" content="Dream Hair Oil: a lightweight fine mist made for chemically straightened hair. Get early access.">
+<title>STRAND Haircare | Feel done longer</title>
+<meta name="description" content="Haircare for women who relax their hair. Starting with the scalp pair: Dream Scalp Treatment for wash day and Dream Scalp Drops for every day after. Light, never greasy. Join the list.">
 <link rel="icon" href="icon.png" type="image/png">
 <link rel="apple-touch-icon" href="icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="STRAND">
 <meta property="og:url" content="https://strand-haircare.com/">
-<meta property="og:title" content="STRAND | Haircare designed for your choice">
-<meta property="og:description" content="Care for your chemically straightened hair. A simple routine for the weeks between touch-ups, starting with Dream Hair Oil.">
+<meta property="og:title" content="STRAND | Feel done longer">
+<meta property="og:description" content="For women who relax their hair. A simple scalp pair for the days between salon visits. Light, never greasy.">
+<!-- TODO: new OG image for the scalp pair (current og.png shows Dream Hair Oil) -->
 <meta property="og:image" content="https://strand-haircare.com/og.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,77 +23,136 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="styles.css?v=20261026">
-<link rel="preload" as="image" href="img/fine-mist.jpg">
+<link rel="preload" as="image" href="img/how-to-use.jpg">
 <style>
-.pv{background:var(--ink);color:var(--silk);font-size:12px;letter-spacing:.08em;text-align:center;padding:8px 12px}
-.v2hero{padding:28px 0 40px;position:relative;overflow:hidden}
-.v2hero::before{content:"";position:absolute;top:0;bottom:0;right:0;left:40%;background:url(img/fine-mist.jpg) 50% 50%/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 28%);mask-image:linear-gradient(90deg,transparent 0,#000 28%);pointer-events:none}
-.v2hero .wrap{position:relative;min-height:600px}
+html,body{overflow-x:clip}
+.v2hero{padding:28px 0 48px;position:relative;overflow:hidden}
+.v2hero::before{content:"";position:absolute;top:0;bottom:0;right:0;left:44%;background:url(img/how-to-use.jpg) 30% 22%/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%);mask-image:linear-gradient(90deg,transparent 0,#000 30%);pointer-events:none}
+.v2hero .wrap{position:relative;min-height:600px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .v2hero .heropic{visibility:hidden}
-.v2hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .v2hero .eyebrow{color:var(--lav-deep);margin-bottom:14px}
-.v2hero h1{font-size:clamp(42px,6vw,76px);line-height:.98;letter-spacing:-.01em}
-.v2hero h1 em{display:block;color:var(--ink)}
+.v2hero h1{font-size:clamp(48px,7vw,92px);line-height:.95;letter-spacing:-.01em}
+.v2hero h1 em{color:var(--ink)}
 .v2hero .sub{font-size:18px;line-height:1.5;color:var(--muted);margin:18px 0 22px;max-width:30em}
+.v2hero .sub b{color:var(--ink);font-weight:600}
 .v2pic{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--sand);position:relative}
 .v2pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 58%}
 .signup{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;max-width:520px}
-.signup form{display:flex;gap:10px}
-.signup input[type=email]{flex:1;min-width:0;font:inherit;font-size:16px;padding:15px 16px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink)}
-.signup input[type=email]:focus{outline:2px solid var(--lav-deep);outline-offset:1px}
-.signup .btn{white-space:nowrap}
 .signup .go{width:100%;font-size:15px;padding:18px 24px}
 .signup .fine{font-size:12px;color:var(--muted);margin:10px 4px 0}
-.step2 h3{font-size:26px;margin:2px 0 4px}
-.step2 p{margin:0 0 12px;color:var(--muted);font-size:14px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font:inherit;font-size:14px;padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
-.chip:hover{border-color:var(--lav-deep)}
 .done h3{font-size:28px;margin:0 0 6px}
 .done p{margin:0 0 14px;color:var(--muted)}
 .hide{display:none!important}
-.v2b{padding:8px 0 56px}
-.v2b .row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.v2b .b{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
-.v2b .b h3{font-size:24px;line-height:1.1;margin-bottom:6px}
-.v2b .b p{margin:0;font-size:15px;color:var(--muted)}
-.v2how{padding:24px 0 64px}
-.v2how .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-.v2how h2,.v2hear h2,.v2end h2{font-size:clamp(34px,4.4vw,54px);line-height:1}
-.v2how ol{list-style:none;padding:0;margin:22px 0 0;counter-reset:s}
-.v2how li{display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--line);font-size:17px}
-.v2how li:last-child{border-bottom:1px solid var(--line)}
-.v2how li::before{counter-increment:s;content:"0" counter(s);font-family:var(--f-display);font-size:24px;color:var(--lav-deep);min-width:34px;line-height:1.1}
-.v2hear{background:var(--ink);color:var(--on-cocoa);padding:64px 0}
-.v2hear .eyebrow{color:var(--on-cocoa-muted)}
-.v2hear .stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:30px}
-.v2hear b{display:block;font-family:var(--f-display);font-weight:400;font-size:64px;line-height:1;color:var(--lav)}
-.v2hear p{margin:8px 0 0;color:var(--on-cocoa-muted)}
-.v2hear .src{margin-top:26px;font-size:12px;color:var(--on-cocoa-muted)}
-.v2end{padding:64px 0 120px;text-align:center}
-.v2end .signup{margin:22px auto 0;text-align:left}
-.v2end .ig{margin-top:22px}
+.sec{padding:clamp(64px,8vw,104px) 0}
+.sec h2{font-size:clamp(36px,4.6vw,58px);line-height:1}
+.sec .lede{font-size:18px;color:var(--muted);max-width:32em;margin:18px 0 0}
+
+/* The days between */
+.days{background:var(--ink);color:var(--on-cocoa)}
+.days .eyebrow{color:var(--on-cocoa-muted)}
+.days .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.days .lede{color:var(--on-cocoa-muted)}
+.days .pains li{grid-template-columns:76px 1fr}
+.days .pains li span{color:var(--lav)}
+.days .nojudge{margin:26px 0 0;font-size:15px;color:var(--on-cocoa-muted);max-width:30em}
+
+/* Scalp pair */
+.pair .head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:40px}
+.pair .head .lede{margin:0}
+.pair .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center;min-width:0}
+.prod.b{background:var(--lav)}
+.prod.b .when,.prod.b p{color:var(--ink)}
+.label{aspect-ratio:3/5;border-radius:16px;background:radial-gradient(120% 80% at 50% 18%,#F6F1EA 0%,#E9DFD2 60%,#DACCBC 100%);display:flex;align-items:center;justify-content:center;padding:12px}
+.prod.b .label{background:radial-gradient(120% 80% at 50% 18%,#EFE9F7 0%,#D9CCEA 60%,#C3B2E0 100%)}
+.label div{background:#FBF8F4;border-radius:4px;padding:12px 10px;width:100%;box-shadow:0 6px 18px rgba(29,26,24,.08)}
+.label small{display:block;font-size:8px;letter-spacing:.3em;font-stretch:125%;border-bottom:1.5px solid var(--ink);padding-bottom:4px;margin-bottom:8px;width:max-content}
+.label b{display:block;font-family:var(--f-display);font-weight:400;font-style:italic;font-size:19px;line-height:1.05}
+.label i{display:block;font-style:normal;font-size:7.5px;letter-spacing:.16em;text-transform:uppercase;margin-top:8px;color:var(--muted)}
+.prod .when{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;font-stretch:115%;color:var(--lav-deep)}
+.prod h3{font-size:clamp(28px,2.8vw,34px);line-height:1.05;margin:8px 0 10px}
+.prod p{margin:0;font-size:15.5px;color:var(--muted)}
+.prod ul{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+.prod li{font-size:12px;padding:5px 11px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(29,26,24,.18)}
+.routine{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:28px}
+.routine > div{padding:20px 20px 0 0;min-width:0}
+.routine .n{font-size:11px;letter-spacing:.2em;color:var(--lav-deep);font-weight:600;font-stretch:115%}
+.routine h4{font-family:var(--f-display);font-weight:400;font-size:26px;line-height:1.1;margin:6px 0 4px}
+.routine p{margin:0;font-size:15px;color:var(--muted)}
+.price{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;font-size:15px;color:var(--muted)}
+.price b{font-family:var(--f-display);font-weight:400;font-size:30px;color:var(--ink);line-height:1}
+
+/* Coming next */
+.next{padding-top:0}
+.next .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.nx{border:1px solid var(--line);border-radius:22px;overflow:hidden;display:grid;grid-template-columns:140px 1fr;min-width:0;background:var(--card)}
+.nx .pic{position:relative;background:var(--sand);min-height:170px}
+.nx .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.nx .pic.mist{background:linear-gradient(160deg,#E9DFD2 0%,#D9CCEA 100%);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-style:italic;font-size:44px;color:var(--lav-deep)}
+.nx .txt{padding:22px}
+.nx h3{font-size:28px;line-height:1.05;margin:10px 0 6px}
+.nx p{margin:0;font-size:15px;color:var(--muted)}
+.pill{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:5px 11px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);color:var(--muted)}
+
+/* Founder note */
+.note{background:var(--sand)}
+.note .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+.note .copy{display:flex;flex-direction:column;gap:18px;font-size:18px;max-width:34em}
+.note .copy p{margin:0}
+.note .copy .lead{font-family:var(--f-display);font-size:clamp(24px,2.6vw,32px);line-height:1.18}
+.note .byline{display:flex;align-items:center;gap:16px}
+.note .byline img{width:64px;height:64px;border-radius:50%;object-fit:cover;display:block;flex:none}
+.note .sig{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-stretch:115%;color:var(--muted);margin:0}
+
+/* Talk to us */
+.talk .box{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.talk ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:10px}
+.talk li{display:flex;gap:12px;align-items:baseline;font-size:17px}
+.talk li::before{content:"";flex:none;width:16px;height:2px;background:var(--lav-deep);transform:translateY(-4px)}
+.talk .act{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.talk .addr{font-size:14px;color:var(--muted);word-break:break-all}
+
+/* Deposit */
+.deposit{padding-top:0;padding-bottom:clamp(88px,10vw,128px)}
+.deposit .panel{background:var(--cocoa);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.deposit .eyebrow{color:var(--on-cocoa-muted)}
+.deposit h2{color:var(--on-cocoa);font-size:clamp(32px,4vw,50px)}
+.deposit .terms{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.deposit .terms li{font-size:13px;padding:6px 12px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(242,237,230,.3);color:var(--on-cocoa)}
+.deposit .first{margin:20px 0 0;color:var(--on-cocoa-muted);font-size:16px;max-width:30em}
+.deposit .first b{color:var(--on-cocoa);font-weight:500}
+.deposit .act{display:flex;flex-direction:column;gap:10px;align-items:stretch}
+.deposit .act .btn{font-size:15px;padding:18px 24px}
+.deposit .act small{color:var(--on-cocoa-muted);font-size:12px;text-align:center}
+
 .sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:none}
 .sticky .btn{width:100%;box-shadow:0 8px 28px rgba(29,26,24,.25)}
 @media (max-width:900px){
-  .v2hero .wrap,.v2how .wrap{grid-template-columns:1fr;gap:22px}
+  .v2hero .wrap,.days .grid,.pair .head,.pair .row,.next .row,.note .grid,.talk .box,.deposit .panel{grid-template-columns:1fr;gap:22px}
   .v2hero{padding-top:14px}
   .v2hero::before{display:none}
   .v2hero .wrap{min-height:0}
   .v2hero .heropic{visibility:visible}
-  .v2hero .v2pic{order:-1;aspect-ratio:2/1;border-radius:18px}
-  .v2hero h1{font-size:38px}
+  .v2hero .v2pic{order:-1;aspect-ratio:4/3;border-radius:18px}
+  .v2hero .v2pic img{object-position:50% 20%}
+  .v2hero h1{font-size:46px}
   .v2hero .sub{font-size:16px;margin:12px 0 14px}
   .v2hero .eyebrow{margin-bottom:8px}
-  .v2hero .signup{padding:12px}
-  .v2hero .v2pic img{object-position:50% 64%}
-  .v2b .row,.v2hear .stats3{grid-template-columns:1fr}
-  .v2how .v2pic{order:0;aspect-ratio:4/5}
+  .pair .head{margin-bottom:24px}
+  .routine{grid-template-columns:1fr}
+  .routine > div{padding:16px 0;border-bottom:1px solid var(--line)}
   .sticky.on{display:block}
 }
-@media (max-width:420px){
-  .signup form{flex-direction:column}
-  .signup .btn{width:100%}
+@media (max-width:560px){
+  .prod{grid-template-columns:96px 1fr;gap:16px;padding:16px;align-items:start}
+  .label{padding:7px}
+  .label div{padding:8px 6px}
+  .label small{font-size:6px;letter-spacing:.24em}
+  .label b{font-size:13px}
+  .label i{font-size:5.5px}
+  .nx{grid-template-columns:110px 1fr}
+  .nx .txt{padding:16px}
+  .days .pains li{grid-template-columns:58px 1fr}
 }
 </style>
 </head>
@@ -108,66 +168,160 @@
 </header>
 
 <main id="top">
+  <!-- Hero -->
   <section class="v2hero" aria-labelledby="h1">
     <div class="wrap">
       <div>
-        <div class="eyebrow">For chemically straightened hair</div>
-        <h1 id="h1">Most oils were made for curls. <em>This one's made for yours.</em></h1>
-        <p class="sub">Light enough for chemically straightened hair. Dream Hair Oil is a fine mist that gives your ends softness and shine. Never heavy, never greasy.</p>
+        <div class="eyebrow">For women who relax their hair</div>
+        <h1 id="h1">Feel done <em>longer.</em></h1>
+        <p class="sub">Salon day is the easy part. It's the days in between. STRAND starts at the scalp, with a simple pair that keeps it feeling calm and fresh. <b>Light, never greasy.</b></p>
         <div class="tally-wrap hero-form" id="join">
           <div class="eyebrow" style="margin-bottom:6px">Get early access. Free, no payment.</div>
           <iframe id="tally" data-src="https://tally.so/embed/q5ZBPY" width="100%" height="420" frameborder="0" marginheight="0" marginwidth="0" title="Get early access"></iframe>
           <p class="fine">We'll only email you about STRAND. Trouble with the form? <a href="https://tally.so/r/q5ZBPY" data-utm target="_blank" rel="noopener">Open it here</a>.</p>
         </div>
       </div>
-      <div class="v2pic heropic"><img src="img/fine-mist.jpg" width="864" height="1184" alt="A hand spritzing a bottle of STRAND Dream Hair Oil, a fine mist for chemically straightened hair" fetchpriority="high"></div>
+      <!-- TODO: swap in scalp pair photography when samples exist (current photo is from the Hair Oil shoot) -->
+      <div class="v2pic heropic"><img src="img/how-to-use.jpg" width="864" height="1184" alt="A woman with sleek, freshly done straightened hair" fetchpriority="high"></div>
     </div>
   </section>
 
-  <section class="v2b" aria-label="Why Dream Hair Oil">
+  <!-- The days between -->
+  <section class="sec days" id="days" aria-labelledby="h2days">
     <div class="wrap">
+      <div class="grid">
+        <div>
+          <div class="eyebrow">The days between</div>
+          <h2 id="h2days" style="margin-top:12px">You leave the salon feeling ready. <em>Then the week happens.</em></h2>
+          <p class="lede">When your hair isn't done, you don't feel done. We hear it again and again. The hard part is the stretch between touch-ups.</p>
+        </div>
+        <div>
+          <ol class="pains">
+            <li><span>DAY 1</span>Fresh. Smooth. You feel like yourself.</li>
+            <li><span>DAY 3</span>The itch starts. You scratch. Your roots go flat.</li>
+            <li><span>DAY 5</span>The style's gone, and you don't feel ready to face anyone.</li>
+          </ol>
+          <p class="nojudge">No judgment about relaxing. It's your hair and your choice. We just want the days in between to feel easier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The scalp pair -->
+  <section class="sec pair" id="scalp" aria-labelledby="h2pair">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Start here</div>
+          <h2 id="h2pair" style="margin-top:12px">The scalp pair. <em>No guesswork.</em></h2>
+        </div>
+        <p class="lede">One for wash day. One for every day after. That's the whole routine.</p>
+      </div>
       <div class="row">
-        <div class="b"><h3>Light, never greasy</h3><p>A fine mist that doesn't weigh straightened hair down.</p></div>
-        <div class="b"><h3>Softness and shine</h3><p>A light layer smooths your ends so they look glossy and feel soft.</p></div>
-        <div class="b"><h3>Made for your hair</h3><p>Built for chemically straightened hair. Not curls.</p></div>
+        <article class="prod">
+          <div class="label" aria-hidden="true"><div><small>STRAND</small><b>Dream Scalp Treatment</b><i>Pre-wash</i></div></div>
+          <div>
+            <span class="when">Wash day</span>
+            <h3>Dream Scalp Treatment</h3>
+            <p>Massage it in before you shampoo. It helps lift visible flakes so they rinse away, and leaves your scalp feeling calm and clean.</p>
+            <ul><li>Pre-wash</li><li>Calming</li><li>Rinses clean</li></ul>
+          </div>
+        </article>
+        <article class="prod b">
+          <div class="label" aria-hidden="true"><div><small>STRAND</small><b>Dream Scalp Drops</b><i>Leave-on</i></div></div>
+          <div>
+            <span class="when">Every day</span>
+            <h3>Dream Scalp Drops</h3>
+            <p>A few light drops along your parts. Soothes that mid-week itchy feeling without touching your style. Never greasy.</p>
+            <ul><li>Leave-on</li><li>Light</li><li>Not greasy</li></ul>
+          </div>
+        </article>
+      </div>
+      <div class="routine">
+        <div><span class="n">01</span><h4>Wash day</h4><p>Treatment on your scalp, then shampoo as usual.</p></div>
+        <div><span class="n">02</span><h4>Every day after</h4><p>Drops on your parts. Pat in. Done.</p></div>
+        <div><span class="n">03</span><h4>Day 5</h4><p>Still feel like yourself.</p></div>
+      </div>
+      <!-- TODO: confirm price wording ($20 per product or for the pair?) -->
+      <div class="price"><b>About $20</b><span>In development now. Founding batch first.</span></div>
+    </div>
+  </section>
+
+  <!-- Coming next -->
+  <section class="sec next" aria-labelledby="h2next">
+    <div class="wrap">
+      <div class="eyebrow">Coming next</div>
+      <h2 id="h2next" style="margin-top:12px">Then <em>the rest of the week.</em></h2>
+      <div class="row">
+        <article class="nx">
+          <div class="pic"><img src="img/dream-hair-oil.jpg" width="864" height="1184" alt="A bottle of STRAND Dream Hair Oil with a fine-mist sprayer" loading="lazy"></div>
+          <div class="txt"><span class="pill">Coming next</span><h3>Dream Hair Oil</h3><p>A light mist for your ends. Softness and shine without the weight.</p></div>
+        </article>
+        <article class="nx">
+          <div class="pic mist" aria-hidden="true">Day 5</div>
+          <div class="txt"><span class="pill">Coming next</span><h3>Day 5 Mist</h3><p>A quick mist that brings back body and swing, so your press feels fresh to day 5.</p></div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="v2how" id="oil" aria-labelledby="h2how">
+  <!-- Founder note -->
+  <section class="sec note" id="story" aria-labelledby="h2note">
     <div class="wrap">
-      <div class="v2pic"><img src="img/how-to-use-crop.jpg" width="864" height="1080" alt="Holding the ends of sleek straightened hair and spritzing them with Dream Hair Oil" loading="lazy"></div>
-      <div>
-        <div class="eyebrow">How to use it</div>
-        <h2 id="h2how" style="margin-top:12px">Two to three spritzes. <em>That's it.</em></h2>
-        <ol>
-          <li><span><b>Wet or dry hair.</b> After washing, or any day your ends feel dry.</span></li>
-          <li><span><b>Mist your mid-lengths and ends.</b> Two to three spritzes.</span></li>
-          <li><span><b>Keep it off your scalp.</b> A little goes a long way.</span></li>
-        </ol>
+      <div class="grid">
+        <div>
+          <div class="eyebrow">A note from Sarah</div>
+          <h2 id="h2note" style="margin-top:12px">Made by a woman <em>who relaxes too.</em></h2>
+        </div>
+        <div class="copy">
+          <p class="lead">I've relaxed my hair since I was about ten. The salon was never the problem. The days after were.</p>
+          <p>A fresh touch-up, then weeks of guessing. I wanted simple products for the in-between that I actually knew how to use. So we're making them, starting with the scalp.</p>
+          <div class="byline"><img src="sarah.jpg" alt="Sarah, founder of STRAND" width="64" height="64"><p class="sig">Sarah, Founder</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="v2hear" id="hearing" aria-labelledby="h2hear">
+  <!-- Talk to us -->
+  <!-- TODO: confirm hello@ inbox exists before going live -->
+  <section class="sec talk" id="talk" aria-labelledby="h2talk">
     <div class="wrap">
-      <div class="eyebrow">What we're hearing</div>
-      <h2 id="h2hear" style="margin-top:12px">You're not <em>the only one.</em></h2>
-      <div class="stats3">
-        <div><b>59%</b><p>came back to relaxing after quitting.</p></div>
-        <div><b>63%</b><p>of salon clients would like to do more of their care at home.</p></div>
-        <div><b>85%</b><p>plan to still be relaxing a year from now.</p></div>
+      <div class="box">
+        <div>
+          <div class="eyebrow">Talk to us</div>
+          <h2 id="h2talk" style="margin-top:12px">Tell us about <em>your hair.</em></h2>
+          <ul>
+            <li>What happens around day 3?</li>
+            <li>What have you tried that didn't work?</li>
+            <li>What do you wish just existed?</li>
+          </ul>
+        </div>
+        <div class="act">
+          <a class="btn dark" data-email href="#talk">Write to Sarah</a>
+          <span class="addr" data-email-text></span>
+          <p class="fine" style="margin:0">A real person reads these. Usually Sarah.</p>
+        </div>
       </div>
-      <p class="src">From our survey of women who chemically straighten their hair.</p>
     </div>
   </section>
 
-  <section class="v2end" aria-labelledby="h2end">
+  <!-- Founding batch deposit -->
+  <!-- TODO: deposit link + lawyer-approved wording before live -->
+  <section class="sec deposit" id="reserve" aria-labelledby="h2dep">
     <div class="wrap">
-      <div class="eyebrow">In development</div>
-      <h2 id="h2end" style="margin-top:12px">Be first <em>to try it.</em></h2>
-      <div class="signup" data-where="footer"></div>
-      <div><a class="ig" href="https://www.instagram.com/shopstrandhair/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg><span>Follow along @shopstrandhair</span></a></div>
+      <div class="panel">
+        <div>
+          <div class="eyebrow">Founding batch</div>
+          <h2 id="h2dep" style="margin-top:12px">Reserve your spot in the founding batch: <em>$6.</em></h2>
+          <ul class="terms"><li>Refundable</li><li>Credited to your first order</li></ul>
+          <p class="first"><b>Which do you want first?</b> The Treatment, the Drops, or both. We'll ask when you reserve, and it helps us decide what to make first.</p>
+        </div>
+        <div class="act">
+          <!-- TODO: deposit link + lawyer-approved wording before live -->
+          <a class="btn lav" href="#" data-deposit>Reserve for $6</a>
+          <small>Not ready to reserve? <a href="#join">Join the free list</a>.</small>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -177,25 +331,22 @@
 <footer>
   <div class="wrap">
     <a class="mark" href="#top" aria-label="STRAND home"><b>STRAND</b><i></i></a>
+    <a class="foot-ig" href="https://www.instagram.com/shopstrandhair/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>Follow along @shopstrandhair</a>
     <span>Products in development.</span>
     <span>&copy; 2026 STRAND</span>
   </div>
 </footer>
 
-<template id="signup-tpl">
-  <div class="step1">
-    <a class="btn lav go" href="https://tally.so/r/q5ZBPY" target="_blank" rel="noopener" data-utm>Get early access</a>
-    <p class="fine">Takes 20 seconds. First looks and early access. We'll only email you about STRAND.</p>
-  </div>
-  <div class="done hide">
-    <h3>You're on the list.</h3>
-    <p>We'll be in touch with first looks. In the meantime, come say hi.</p>
-    <a class="btn dark sm" href="https://www.instagram.com/shopstrandhair/" target="_blank" rel="noopener">Follow @shopstrandhair</a>
-  </div>
-</template>
-
 <script>
 (function(){
+  // TODO: confirm hello@ inbox exists before going live
+  var CONTACT_EMAIL='hello@strand-haircare.com';
+  var mail='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('About my hair');
+  document.querySelectorAll('[data-email]').forEach(function(a){ a.href=mail; });
+  document.querySelectorAll('[data-email-text]').forEach(function(s){ s.textContent=CONTACT_EMAIL; });
+  // TODO: deposit link + lawyer-approved wording before live (button is a placeholder)
+  document.querySelectorAll('[data-deposit]').forEach(function(a){ a.addEventListener('click',function(e){ if(a.getAttribute('href')==='#') e.preventDefault(); }); });
+
   var FORM='q5ZBPY';
   var q=new URLSearchParams(location.search), utm={};
   ['utm_source','utm_campaign','utm_content','utm_medium'].forEach(function(k){ if(q.get(k)) utm[k]=q.get(k); });
@@ -209,24 +360,14 @@
   sc.onerror=function(){ f.src=f.getAttribute('data-tally-src'); };
   document.head.appendChild(sc);
   window.addEventListener('message',function(e){ try{ if(typeof e.data==='string' && e.data.indexOf('Tally.FormSubmitted')>-1){ joined(); } }catch(err){} });
-  var tpl=document.getElementById('signup-tpl');
-  function joined(){
-    document.body.classList.add('joined');
-    document.querySelectorAll('.signup').forEach(function(b){ b.querySelector('.step1').classList.add('hide'); b.querySelector('.done').classList.remove('hide'); });
-    upd();
-  }
+  function joined(){ document.body.classList.add('joined'); upd(); }
   function open(e){
     if(window.Tally && Tally.openPopup){
       e && e.preventDefault();
       Tally.openPopup(FORM,{layout:'modal',width:520,hiddenFields:utm,autoClose:1500,onSubmit:joined});
     } // else: link opens the form in a new tab, with UTMs
   }
-  document.querySelectorAll('.signup').forEach(function(box){
-    box.appendChild(tpl.content.cloneNode(true));
-    var a=box.querySelector('.go'); if(qs) a.href+= '?'+qs;
-    a.addEventListener('click',open);
-  });
-  var st=document.getElementById('sticky'), hero=document.getElementById('join'), end=document.querySelector('.v2end');
+  var st=document.getElementById('sticky'), hero=document.getElementById('join'), end=document.getElementById('reserve');
   var vis={hero:true,end:false};
   function upd(){ st.classList.toggle('on', !vis.hero && !vis.end && !document.body.classList.contains('joined')); }
   if('IntersectionObserver' in window){
