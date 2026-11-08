@@ -56,6 +56,10 @@ html,body{overflow-x:clip}
 .learn .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .learn .facts{display:flex;flex-direction:column;gap:16px;font-size:17px;margin:0}
 .learn .facts p{margin:0}
+.learn .facts .experts{margin-top:6px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:14px;font-size:16px}
+.learn .facts .experts span{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-deep);font-weight:600;margin-bottom:6px}
+.ways .share{margin-top:28px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1px solid var(--line);border-radius:18px;padding:18px 22px;background:var(--card)}
+.ways .share p{margin:0;max-width:40em}
 .learn .needs{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3vw,36px)}
 .learn .needs h3{font-size:clamp(26px,2.6vw,32px);line-height:1.1;margin:0 0 14px}
 .learn .needs ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
@@ -168,9 +172,10 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
           <h2 id="h2learn" style="margin:12px 0 26px">What chemical straightening does to <em>your hair</em></h2>
           <div class="facts">
             <p>Relaxers change your hair's inner bonds permanently. The straightened part stays straight. New growth comes in with your natural texture.</p>
-            <p>Where the two textures meet is the most fragile point on the strand. That's where breakage likes to start.</p>
+            <p>So every strand carries two textures. Gentle care where they meet keeps your style going longer.</p>
             <p>Keratin and smoothing treatments reshape those bonds for a while. The curl softens for a few months, then slowly comes back.</p>
-            <p>Either way, straightened hair loses moisture faster and gets weighed down more easily. So it needs its own kind of care.</p>
+            <p>Either way, straightened hair loves light moisture. Heavy products sit on top and flatten your style.</p>
+            <p class="experts"><span>From the experts we talked to</span>Care for chemically straightened hair has been overlooked for years. Your choice to straighten deserves products made for it. That's what we're building.</p>
           </div>
         </div>
         <div class="needs">
@@ -218,7 +223,7 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
         <article class="way">
           <span class="n">01</span>
           <h3>Join the community.</h3>
-          <p>Hear what we're making first, and what other women are telling us.</p>
+          <p>Hear what we're making first, what experts are teaching us, and what other women are telling us.</p>
           <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="waitlist" target="_blank" rel="noopener">Join the community</a>
         </article>
         <article class="way">
@@ -233,6 +238,10 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
           <p>After a touch-up or wash day, what changes first, and on what day? What have you tried that didn't work? Founding members help decide what we make first.</p>
           <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="feedback" target="_blank" rel="noopener">Tell us about your hair</a>
         </article>
+      </div>
+      <div class="share">
+        <p><strong>Know a woman who chemically straightens?</strong> Send her STRAND. The more of us, the better we build it.</p>
+        <button type="button" class="btn" id="sharebtn">Send to a friend</button>
       </div>
     </div>
   </section>
@@ -297,6 +306,14 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
     new IntersectionObserver(function(es){ es.forEach(function(e){ vis.hero=e.isIntersecting; }); upd(); }).observe(hero);
     new IntersectionObserver(function(es){ es.forEach(function(e){ vis.end=e.isIntersecting; }); upd(); }).observe(end);
   }
+  var sb=document.getElementById('sharebtn');
+  if(sb){ var shareUrl='https://strand-haircare.com/?utm_source=share&utm_campaign=friend';
+    sb.addEventListener('click',function(){
+      var d={title:'STRAND',text:'Care for chemically straightened hair, built with women who straighten. Come help build it.',url:shareUrl};
+      if(navigator.share){ navigator.share(d).catch(function(){}); }
+      else if(navigator.clipboard){ navigator.clipboard.writeText(shareUrl).then(function(){ sb.textContent='Link copied'; setTimeout(function(){sb.textContent='Send to a friend';},2500); }); }
+      else { location.href='mailto:?subject='+encodeURIComponent('Thought of you')+'&body='+encodeURIComponent(d.text+' '+shareUrl); }
+    }); }
   var bar=document.getElementById('top-bar');
   window.addEventListener('scroll',function(){ bar.classList.toggle('scrolled', window.scrollY>10); },{passive:true});
 })();
