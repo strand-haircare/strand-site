@@ -148,6 +148,10 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
         <div class="tally-wrap hero-form" id="join">
           <div class="eyebrow" style="margin-bottom:6px">Join, and get The Days Between free</div>
           <iframe id="tally" data-src="https://tally.so/embed/q5ZBPY" width="100%" height="420" frameborder="0" marginheight="0" marginwidth="0" title="Join the list"></iframe>
+          <div id="followup" hidden style="margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 4px">
+            <div class="eyebrow" style="margin-bottom:4px">One more thing, if you have 10 seconds</div>
+            <iframe width="100%" height="230" frameborder="0" marginheight="0" marginwidth="0" title="Optional follow-up"></iframe>
+          </div>
           <p class="fine">We'll only email you about STRAND. Trouble with the form? <a href="https://tally.so/r/q5ZBPY" data-utm target="_blank" rel="noopener">Open it here</a>.</p>
         </div>
       </div>
@@ -278,8 +282,26 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
   sc.onload=function(){ if(window.Tally){ Tally.loadEmbeds(); } };
   sc.onerror=function(){ f.src=f.getAttribute('data-tally-src'); };
   document.head.appendChild(sc);
-  window.addEventListener('message',function(e){ try{ if(typeof e.data==='string' && e.data.indexOf('Tally.FormSubmitted')>-1){ joined(); } }catch(err){} });
-  function joined(){ try{localStorage.setItem('strand_member','1');}catch(e){} document.body.classList.add('joined'); upd(); }
+  window.addEventListener('message',function(e){ try{ if(typeof e.data==='string' && e.data.indexOf('Tally.FormSubmitted')>-1){ var d=JSON.parse(e.data); if(d.payload && d.payload.formId && d.payload.formId!==FORM) return; joined(d.payload, f && e.source===f.contentWindow); } }catch(err){} });
+  var didJoin=false;
+  function joined(pl, inline){ try{localStorage.setItem('strand_member','1');}catch(e){} document.body.classList.add('joined'); upd();
+    if(didJoin) return; didJoin=true; followUp(pl||{}, !!inline); }
+
+  // Optional follow-up, shown only after she's on the list
+  var FOLLOW='gbegZM';
+  function followUp(pl, inline){
+    var hf={}; (pl.fields||[]).forEach(function(x){ if(x.type==='INPUT_EMAIL' && x.value) hf.email=x.value; });
+    if(pl.respondentId) hf.respondent=pl.respondentId;
+    if(utm.utm_source) hf.utm_source=utm.utm_source; if(utm.utm_campaign) hf.utm_campaign=utm.utm_campaign;
+    if(inline){
+      var box=document.getElementById('followup'); if(!box) return;
+      var q=new URLSearchParams(hf); q.set('alignLeft','1'); q.set('hideTitle','1'); q.set('transparentBackground','1'); q.set('dynamicHeight','1');
+      box.querySelector('iframe').src='https://tally.so/embed/'+FOLLOW+'?'+q.toString();
+      box.hidden=false;
+    } else if(window.Tally && Tally.openPopup){
+      setTimeout(function(){ Tally.openPopup(FOLLOW,{layout:'modal',width:520,hiddenFields:hf,autoClose:2000}); },1800);
+    }
+  }
 
   // Popup opener. fields = hidden fields sent to Tally (page UTMs + any button tag).
   function opener(fields, link){
@@ -288,7 +310,7 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
     link.addEventListener('click',function(e){
       if(window.Tally && Tally.openPopup){
         e.preventDefault();
-        Tally.openPopup(FORM,{layout:'modal',width:520,hiddenFields:fields,autoClose:1500,onSubmit:joined});
+        Tally.openPopup(FORM,{layout:'modal',width:520,hiddenFields:fields,autoClose:1500,onSubmit:function(pl){ joined(pl,false); }});
       } // else: the link opens the hosted form in a new tab with the same params
     });
   }
