@@ -69,6 +69,11 @@ html,body{overflow-x:clip}
 .told blockquote{margin:0;font-family:var(--f-display);font-size:clamp(21px,2vw,25px);line-height:1.25}
 .told figcaption{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--lav-deep);font-weight:600}
 .told .qnote{margin:18px 0 0;font-size:13px;color:var(--muted)}
+.told .qlede{margin:0 0 26px;max-width:620px;font-size:17px;color:var(--muted)}
+.told .qcta{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.told .qcta h3{font-size:clamp(24px,2.4vw,30px);margin:0 0 4px}
+.told .qcta p{margin:0;color:var(--muted)}
+@media (max-width:700px){.told .qcta{flex-direction:column;align-items:stretch}}
 @media (max-width:900px){.told .qrow{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.told .q{scroll-snap-align:start}}
 
 /* Three ways in */
@@ -178,8 +183,9 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
   <!-- What you've told us -->
   <section class="sec told" id="told" aria-labelledby="h2told">
     <div class="wrap">
-      <div class="eyebrow">From the community</div>
-      <h2 id="h2told" style="margin:12px 0 26px">What you've <em>told us</em></h2>
+      <div class="eyebrow">Why we're here</div>
+      <h2 id="h2told" style="margin:12px 0 10px">Sound <em>familiar?</em></h2>
+      <p class="qlede">This is what women who chemically straighten told us about the days between touch-ups. It's why STRAND exists.</p>
       <div class="qrow">
           <figure class="q"><blockquote>&ldquo;If I go get it done on a Tuesday&hellip; on a Friday it feels like I haven't even gotten my hair done.&rdquo;</blockquote><figcaption>Age 53, relaxes</figcaption></figure>
           <figure class="q"><blockquote>&ldquo;&hellip;after day five, my hair is going in the ponytail.&rdquo;</blockquote><figcaption>Age 36, relaxes</figcaption></figure>
@@ -189,6 +195,10 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
           <figure class="q"><blockquote>&ldquo;When I was younger it was more like a chore.&rdquo;</blockquote><figcaption>Age 21, relaxes</figcaption></figure>
       </div>
       <p class="qnote">Shared anonymously by women in the STRAND community.</p>
+      <div class="qcta">
+        <div><h3>Feel this too?</h3><p>Join the conversation. Tell us what the days between are like for you.</p></div>
+        <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="conversation" target="_blank" rel="noopener">Join the conversation</a>
+      </div>
     </div>
   </section>
 
@@ -215,7 +225,7 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
         <article class="way">
           <span class="n">03</span>
           <h3>Help shape it.</h3>
-          <p>What happens to your hair by day 3? What have you tried that didn't work? Founding members help decide what we make first.</p>
+          <p>After a touch-up or wash day, what goes wrong first, and on what day? What have you tried that didn't work? Founding members help decide what we make first.</p>
           <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="feedback" target="_blank" rel="noopener">Tell us about your hair</a>
         </article>
       </div>
