@@ -36,6 +36,7 @@ html,body{overflow-x:clip}
 .v3hero h1{font-size:clamp(48px,7vw,92px);line-height:.95;letter-spacing:-.01em}
 .v3hero .sub{font-size:18px;line-height:1.5;color:var(--ink);margin:18px 0 10px;max-width:30em}
 .v3hero .foryou{font-size:14px;color:var(--muted);margin:0 0 22px}
+.dbcall{display:block;margin:-6px 0 18px;padding:12px 16px;background:rgba(251,248,244,.94);border:1px solid var(--line);border-left:3px solid var(--lav-deep);border-radius:12px;font-size:15px;line-height:1.45;color:var(--ink);text-decoration:none;max-width:30em}.dbcall span{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-deep);font-weight:600;margin-bottom:3px}.dbcall u{color:var(--lav-deep)}
 .hero-form{background:rgba(251,248,244,.94)}
 .hide{display:none!important}
 
@@ -52,7 +53,7 @@ html,body{overflow-x:clip}
 .days p.lede{color:var(--on-cocoa-muted);margin:0;font-size:19px}
 
 /* What straightening does */
-.navlinks{display:flex;align-items:center;gap:18px}.navtold{font-size:14px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}@media (max-width:600px){.navtold{display:none}}
+.navlinks{display:flex;align-items:center;gap:18px}.navtold{font-size:14px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}.navdb{font-size:14px;color:var(--lav-deep);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}@media (max-width:600px){.navtold{display:none}}
 .learn .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .learn .facts{display:flex;flex-direction:column;gap:16px;font-size:17px;margin:0}
 .learn .facts p{margin:0}
@@ -126,6 +127,7 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
   <div class="wrap">
     <a class="mark" href="#top" aria-label="STRAND home"><b>STRAND</b><i></i></a>
     <nav class="navlinks" aria-label="Main">
+      <a class="navdb" href="/days-between">The Days Between</a>
       <a class="navtold" href="#told">What you've told us</a>
       <a class="ig" href="https://www.instagram.com/shopstrandhair/" target="_blank" rel="noopener" aria-label="Follow STRAND on Instagram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg><span>@shopstrandhair</span></a>
     </nav>
@@ -139,11 +141,12 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
       <div class="copy">
         <div class="eyebrow">For chemically straightened hair</div>
         <h1 id="h1">Feel done <em>longer.</em></h1>
-        <p class="sub">Get <b>The Days Between</b>: one helpful thing for chemically straightened hair, every week. From scientists, stylists and women in the same boat. 30 seconds. Free.</p>
+        <p class="sub">Care for every day between touch-ups. We're building it with a community of women who chemically straighten. Come build it with us.</p>
         <p class="foryou">For you if you use relaxers, keratin or smoothing treatments.</p>
+        <a class="dbcall" href="/days-between"><span>New · Free</span><b>The Days Between:</b> one helpful thing for your hair, every week. <u>See what it is</u></a>
         <div class="stage" aria-hidden="true"></div>
         <div class="tally-wrap hero-form" id="join">
-          <div class="eyebrow" style="margin-bottom:6px">Get The Days Between, free</div>
+          <div class="eyebrow" style="margin-bottom:6px">Join, and get The Days Between free</div>
           <iframe id="tally" data-src="https://tally.so/embed/q5ZBPY" width="100%" height="420" frameborder="0" marginheight="0" marginwidth="0" title="Join the list"></iframe>
           <p class="fine">We'll only email you about STRAND. Trouble with the form? <a href="https://tally.so/r/q5ZBPY" data-utm target="_blank" rel="noopener">Open it here</a>.</p>
         </div>
@@ -223,9 +226,9 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
       <div class="row">
         <article class="way">
           <span class="n">01</span>
-          <h3>Get The Days Between.</h3>
-          <p>One helpful thing a week: a tip, a lab insight, a routine. From experts and from women in the same boat. We're learning from each other.</p>
-          <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="waitlist" target="_blank" rel="noopener">Send it to me</a>
+          <h3>Join the community.</h3>
+          <p>Hear what we're making first, and get The Days Between: one helpful thing a week from experts and women in the same boat.</p>
+          <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="waitlist" target="_blank" rel="noopener">Join the community</a>
         </article>
         <article class="way">
           <span class="n">02</span>
@@ -248,7 +251,7 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
   </section>
 </main>
 
-<div class="sticky" id="sticky"><a class="btn dark" href="#join">Get The Days Between</a></div>
+<div class="sticky" id="sticky"><a class="btn dark" href="#join">Join the list</a></div>
 
 <footer>
   <div class="wrap">

@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The Days Between, Drop 1 | STRAND</title>
-<meta name="description" content="Flat by day 3? It's usually too much product, not too little. One helpful thing for chemically straightened hair, every week.">
-<meta property="og:title" content="Flat by day 3? Try less, not more.">
+<title>The Days Between | STRAND</title>
+<meta name="description" content="One helpful thing for chemically straightened hair, every week. From scientists, stylists and women in the same boat. 30 seconds. Free.">
+<meta property="og:title" content="The Days Between, by STRAND">
 <meta property="og:description" content="One helpful thing for chemically straightened hair, every week. 30 seconds. Free.">
 <meta property="og:image" content="https://strand-haircare.com/og.png?v=3">
 <link rel="icon" href="../icon.png" type="image/png">
@@ -14,36 +14,67 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="../styles.css?v=20261026">
 <style>
-html,body{overflow-x:clip;background:#ECE4D1}
-.drop{min-height:calc(100vh - 80px);display:flex;align-items:center;padding:24px 0 48px}
+html,body{overflow-x:clip}
+.dbh{background:#ECE4D1;padding:40px 0 44px}
+.dbh h1{font-size:clamp(46px,7.5vw,92px);line-height:.96;margin:12px 0 16px}
+.dbh .sub{font-size:19px;line-height:1.5;max-width:30em;margin:0 0 22px}
+.dbh .fine{font-size:13px;color:var(--muted);margin-top:12px}
+.what{padding:clamp(40px,6vw,72px) 0 10px}
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.type{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.type b{display:block;font-family:var(--f-display);font-weight:400;font-size:24px;line-height:1.1;margin-bottom:8px}
+.type p{margin:0;font-size:15px;line-height:1.5;color:var(--muted)}
+.thisweek{padding:clamp(36px,5vw,60px) 0 clamp(64px,8vw,100px)}
 .card{max-width:560px;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:clamp(26px,5vw,44px)}
 .tag{display:inline-block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-deep);font-weight:600}
-.card h1{font-size:clamp(40px,7vw,64px);line-height:1;margin:14px 0 18px}
+.card h2{font-size:clamp(36px,6vw,56px);line-height:1;margin:14px 0 18px}
 .card p{font-size:18px;line-height:1.55;margin:0 0 14px}
 .try{border-top:1px solid var(--line);margin-top:20px;padding-top:18px}
 .try b{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-deep)}
 .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.meta{margin-top:18px;font-size:13px;color:var(--muted)}
+@media (max-width:900px){.types{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.types{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header><div class="wrap" style="padding-top:22px;padding-bottom:22px;display:flex;justify-content:space-between;align-items:center;gap:12px">
   <a href="/" style="text-decoration:none;color:inherit;font-weight:500;letter-spacing:.36em;font-size:15px;border-bottom:3px solid currentColor;padding-bottom:4px">STRAND</a>
-  <a href="/?utm_source=drop1&utm_campaign=days_between#join" style="font-size:14px;color:inherit">Get it weekly</a>
+  <a href="/" style="font-size:14px;color:inherit">Back to STRAND</a>
 </div></header>
-<main class="drop"><div class="wrap">
-  <article class="card">
-    <span class="tag">The Days Between · Drop 1 · Tip</span>
-    <h1>Flat by day 3? Try <em>less.</em></h1>
-    <p>Straightened hair holds less moisture inside the strand, so heavy creams and greases sit on top. That's what flattens your style fast.</p>
-    <p>Light layers win. A few drops on your ends, not your roots.</p>
-    <div class="try"><b>Try it this week</b><p style="margin-top:8px">Cut your usual amount in half. Ends only. See if day 3 looks different.</p></div>
-    <div class="btns">
-      <a class="btn dark" href="/?utm_source=drop1&utm_campaign=days_between#join">Get one every week</a>
-      <a class="btn" href="sms:?&body=This%20one%27s%20for%20you%3A%20https%3A%2F%2Fstrand-haircare.com%2Fdays-between">Text it to a friend</a>
+<main>
+  <section class="dbh"><div class="wrap">
+    <div class="eyebrow">Free from STRAND</div>
+    <h1>The Days <em>Between.</em></h1>
+    <p class="sub">One helpful thing for chemically straightened hair, every week. From scientists, stylists and women in the same boat. Read it in 30 seconds.</p>
+    <a class="btn dark" href="/?utm_source=days_between&amp;utm_campaign=days_between#join">Get access, free</a>
+    <p class="fine">Get access by joining the STRAND community. Just your email.</p>
+  </div></section>
+
+  <section class="what"><div class="wrap">
+    <div class="eyebrow">What you get</div>
+    <h2 style="margin:12px 0 0">Something different <em>every week.</em></h2>
+    <div class="types">
+      <div class="type"><b>A tip</b><p>One small change to try this week.</p></div>
+      <div class="type"><b>From the lab</b><p>What the scientists we work with are teaching us.</p></div>
+      <div class="type"><b>Your routine</b><p>Simple steps for the days between touch-ups.</p></div>
+      <div class="type"><b>From the community</b><p>The best tips from women in the same boat.</p></div>
     </div>
-    <p class="meta">One helpful thing for chemically straightened hair, every week. 30 seconds. Free. Got a tip that works for you? Tell us when you join.</p>
-  </article>
-</div></main>
+  </div></section>
+
+  <section class="thisweek"><div class="wrap">
+    <div class="eyebrow" style="margin-bottom:14px">This week's drop</div>
+    <article class="card">
+      <span class="tag">Drop 1 · Tip</span>
+      <h2>Flat by day 3? Try <em>less.</em></h2>
+      <p>Straightened hair holds less moisture inside the strand, so heavy creams and greases sit on top. That's what flattens your style fast.</p>
+      <p>Light layers win. A few drops on your ends, not your roots.</p>
+      <div class="try"><b>Try it this week</b><p style="margin-top:8px">Cut your usual amount in half. Ends only. See if day 3 looks different.</p></div>
+      <div class="btns">
+        <a class="btn dark" href="/?utm_source=days_between&amp;utm_campaign=days_between#join">Get one every week</a>
+        <a class="btn" href="sms:?&amp;body=This%20one%27s%20for%20you%3A%20STRAND%20sends%20one%20helpful%20thing%20for%20chemically%20straightened%20hair%20every%20week.%20https%3A%2F%2Fstrand-haircare.com%2Fdays-between">Text it to a friend</a>
+      </div>
+    </article>
+  </div></section>
+</main>
 </body>
 </html>
