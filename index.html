@@ -279,7 +279,7 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
   sc.onerror=function(){ f.src=f.getAttribute('data-tally-src'); };
   document.head.appendChild(sc);
   window.addEventListener('message',function(e){ try{ if(typeof e.data==='string' && e.data.indexOf('Tally.FormSubmitted')>-1){ joined(); } }catch(err){} });
-  function joined(){ document.body.classList.add('joined'); upd(); }
+  function joined(){ try{localStorage.setItem('strand_member','1');}catch(e){} document.body.classList.add('joined'); upd(); }
 
   // Popup opener. fields = hidden fields sent to Tally (page UTMs + any button tag).
   function opener(fields, link){
