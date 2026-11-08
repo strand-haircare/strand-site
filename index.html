@@ -22,14 +22,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="styles.css?v=20261026">
-<link rel="preload" as="image" href="img/strand-bottle.jpg">
+<link rel="preload" as="image" href="img/strand-bottle-crop.jpg">
 <style>
 html,body{overflow-x:clip}
 :root{--cream:#ECE4D1}
 
 /* Hero: bottle photo as full-bleed background */
 .v3hero{position:relative;overflow:hidden;background:var(--cream);padding:40px 0 64px}
-.v3hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;aspect-ratio:864/1184;background:url(img/strand-bottle.jpg) 50% 50%/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%,#000 80%,transparent 100%),linear-gradient(180deg,transparent 0,#000 10%,#000 90%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 26%,#000 80%,transparent 100%),linear-gradient(180deg,transparent 0,#000 10%,#000 90%,transparent 100%);mask-composite:intersect;pointer-events:none}
+.v3hero::before{content:"";position:absolute;top:auto;height:78%;bottom:0;left:50%;aspect-ratio:864/805;background:url(img/strand-bottle-crop.jpg) 50% 100%/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%,#000 80%,transparent 100%),linear-gradient(180deg,transparent 0,#000 22%,#000 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 26%,#000 80%,transparent 100%),linear-gradient(180deg,transparent 0,#000 22%,#000 100%);mask-composite:intersect;pointer-events:none}
 .v3hero .wrap{position:relative;z-index:1;min-height:640px;display:flex;align-items:center}
 .v3hero .copy{max-width:540px}
 .v3hero .eyebrow{color:var(--lav-deep);margin-bottom:14px}
@@ -95,6 +95,7 @@ html,body{overflow-x:clip}
 .way h3{font-size:clamp(28px,2.6vw,34px);line-height:1.05}
 .way p{margin:0;color:var(--muted);font-size:15.5px;flex:1}
 .way .btn{margin-top:10px;align-self:stretch}
+.ways{padding-top:clamp(44px,6vw,80px)}.way.gift{border-top:1px solid var(--line)}.way.gift h2{font-size:clamp(32px,4vw,48px);line-height:1.05;margin:4px 0 0}.way.gift p{font-size:17px;flex:none}@media (min-width:701px){.way.gift{padding:40px 44px}.way.gift .btn{align-self:flex-start}}
 
 .sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:none}
 .sticky .btn{width:100%;box-shadow:0 8px 28px rgba(29,26,24,.25)}
@@ -108,14 +109,14 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
   .days .grid,.learn .grid,.ways .row{grid-template-columns:1fr;gap:22px}
   .v3hero{padding:22px 0 36px}
   .v3hero::before{display:none}
-  .v3hero .stage{margin:-24px calc(-1 * max(20px, env(safe-area-inset-left, 0px))) -6px;background:url(img/strand-bottle.jpg) 50% -170px/auto 600px no-repeat;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 85%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 85%,transparent 100%)}
+  .v3hero .stage{margin:-24px calc(-1 * max(20px, env(safe-area-inset-left, 0px))) -6px;background:url(img/strand-bottle-crop.jpg) 50% 100%/auto 483px no-repeat;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 14%);mask-image:linear-gradient(180deg,transparent 0,#000 14%)}
   .v3hero .wrap{min-height:0;display:block}
   .v3hero .copy{max-width:none}
   .v3hero .stage{height:340px}
   /* Mobile: form above the fold, bottle below it */
   .v3hero .copy{display:flex;flex-direction:column}
   .v3hero .hero-form{order:1}
-  .v3hero .stage{order:2;margin-top:4px;height:300px}
+  .v3hero .stage{order:2;margin-top:4px;height:280px}
   .v3hero .foryou{margin-bottom:14px}
   .v3hero h1{font-size:46px}
   .v3hero .sub{font-size:16px;margin:12px 0 8px}
@@ -192,27 +193,15 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
     </div>
   </section>
 
-  <!-- Three ways in -->
+  <!-- The gift -->
   <section class="sec ways" id="ways" aria-labelledby="h2ways">
     <div class="wrap">
-      <div class="head">
-        <div class="eyebrow">Join the community</div>
-        <h2 id="h2ways" style="margin-top:12px">Two ways <em>in.</em> Both free.</h2>
-      </div>
-      <div class="row">
-        <article class="way">
-          <span class="n">01</span>
-          <h3>Come build it with us.</h3>
-          <p>Hear what we're making first, and help decide what we make.</p>
-          <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="waitlist" target="_blank" rel="noopener">Join the community</a>
-        </article>
-        <article class="way">
-          <span class="n">02</span>
-          <h3>Be part of The Days Between.</h3>
-          <p>Our gift to you: one helpful thing for your hair, every week. A 30-second read.</p>
-          <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="days_between" target="_blank" rel="noopener">Send me The Days Between</a>
-        </article>
-      </div>
+      <article class="way gift">
+        <div class="eyebrow">Our gift to you</div>
+        <h2 id="h2ways">Be a part of <em>The Days Between.</em></h2>
+        <p>One helpful thing for your hair, every week. A 30-second read.</p>
+        <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="days_between" target="_blank" rel="noopener">Join the community</a>
+      </article>
       <div class="share">
         <p><strong>Know a woman who chemically straightens?</strong> Send her STRAND. The more of us, the better we build it.</p>
         <div class="sharebtns"><a class="btn dark" href="sms:?&amp;body=Thought%20of%20you%21%20I%20joined%20STRAND.%20They%27re%20building%20care%20for%20chemically%20straightened%20hair%2C%20for%20every%20day%20between%20touch-ups.%20Free%20to%20join%2C%20and%20you%20help%20decide%20what%20they%20make%20first%3A%20https%3A%2F%2Fstrand-haircare.com%2Fhi">Text a friend</a><a class="btn" href="mailto:?subject=Thought%20of%20you&amp;body=Hey%21%0A%0AI%20joined%20STRAND%20and%20thought%20of%20you%20right%20away.%0A%0AS%20T%20R%20A%20N%20D%0AFeel%20done%20longer.%0A%0ACare%20for%20every%20day%20between%20touch-ups%2C%20made%20with%20women%20who%20relax%2C%20use%20keratin%20or%20smooth%20their%20hair.%20It%27s%20a%20free%20community%2C%20and%20you%20help%20decide%20what%20they%20make%20first.%0A%0AJoin%20here%3A%20https%3A%2F%2Fstrand-haircare.com%2Finvite%0A">Email a friend</a></div>
