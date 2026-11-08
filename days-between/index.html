@@ -24,7 +24,7 @@ html,body{overflow-x:clip}
 .type{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
 .type b{display:block;font-family:var(--f-display);font-weight:400;font-size:24px;line-height:1.1;margin-bottom:8px}
 .type p{margin:0;font-size:15px;line-height:1.5;color:var(--muted)}
-.thisweek{padding:clamp(36px,5vw,60px) 0 clamp(64px,8vw,100px)}
+.thisweek{padding:clamp(36px,5vw,60px) 0 clamp(40px,5vw,56px)}
 .card{max-width:560px;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:clamp(26px,5vw,44px)}
 .tag{display:inline-block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-deep);font-weight:600}
 .card h2{font-size:clamp(36px,6vw,56px);line-height:1;margin:14px 0 18px}
@@ -32,6 +32,8 @@ html,body{overflow-x:clip}
 .try{border-top:1px solid var(--line);margin-top:20px;padding-top:18px}
 .try b{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-deep)}
 .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.archive{padding:0 0 clamp(64px,8vw,100px)}.drops{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid var(--line);max-width:720px}.drops a{display:grid;grid-template-columns:170px 1fr auto;gap:14px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);color:inherit;text-decoration:none}.drops span{font-size:13px;color:var(--muted)}.drops b{font-family:var(--f-display);font-weight:400;font-size:22px}.drops em{font-style:normal;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--lav-deep);font-weight:600}
+@media (max-width:600px){.drops a{grid-template-columns:1fr}}
 @media (max-width:900px){.types{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.types{grid-template-columns:1fr}}
 </style>
@@ -64,7 +66,7 @@ html,body{overflow-x:clip}
   <section class="thisweek"><div class="wrap">
     <div class="eyebrow" style="margin-bottom:14px">This week's drop</div>
     <article class="card">
-      <span class="tag">Drop 1 · Tip</span>
+      <span class="tag">Drop 1 · Tip · Week of Nov 9, 2026</span>
       <h2>Flat by day 3? Try <em>less.</em></h2>
       <p>Straightened hair holds less moisture inside the strand, so heavy creams and greases sit on top. That's what flattens your style fast.</p>
       <p>Light layers win. A few drops on your ends, not your roots.</p>
@@ -74,6 +76,12 @@ html,body{overflow-x:clip}
         <a class="btn" href="sms:?&amp;body=This%20one%27s%20for%20you%3A%20STRAND%20sends%20one%20helpful%20thing%20for%20chemically%20straightened%20hair%20every%20week.%20https%3A%2F%2Fstrand-haircare.com%2Fdays-between">Text it to a friend</a>
       </div>
     </article>
+  </div></section>
+  <section class="archive"><div class="wrap">
+    <div class="eyebrow">All drops</div>
+    <ul class="drops">
+      <li><a href="/days-between/1"><span>Week of Nov 9, 2026</span><b>Flat by day 3? Try less.</b><em>Tip</em></a></li>
+    </ul>
   </div></section>
 </main>
 </body>
