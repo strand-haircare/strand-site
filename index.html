@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>STRAND Haircare | Feel done longer</title>
-<meta name="description" content="Haircare for women who relax their hair. Starting with the scalp pair: Dream Scalp Treatment for wash day and Dream Scalp Drops for every day after. Light, never greasy. Join the list.">
+<title>STRAND | Care for your chemically straightened hair</title>
+<meta name="description" content="Care for every day between. A simple routine after the touch-up, made for your straightened hair.">
 <link rel="icon" href="icon.png" type="image/png">
 <link rel="apple-touch-icon" href="icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="STRAND">
 <meta property="og:url" content="https://strand-haircare.com/">
-<meta property="og:title" content="STRAND | Feel done longer">
-<meta property="og:description" content="For women who relax their hair. A simple scalp pair for the days between salon visits. Light, never greasy.">
-<!-- TODO: new OG image for the scalp pair (current og.png shows Dream Hair Oil) -->
+<meta property="og:title" content="STRAND | Care for your chemically straightened hair">
+<meta property="og:description" content="Care for every day between. A simple routine after the touch-up, made for your straightened hair.">
+<!-- TODO: new OG image for the scalp pair (current og.png shows the Dream Hair Oil bottle and old tagline) -->
 <meta property="og:image" content="https://strand-haircare.com/og.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="STRAND Dream Hair Oil, a glass bottle of rosy oil with a black fine-mist sprayer, next to the line Haircare designed for your choice">
+<meta property="og:image:alt" content="STRAND Dream Hair Spritz, a glass bottle with a black fine-mist sprayer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://strand-haircare.com/og.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,6 +80,7 @@ html,body{overflow-x:clip}
 .routine h4{font-family:var(--f-display);font-weight:400;font-size:26px;line-height:1.1;margin:6px 0 4px}
 .routine p{margin:0;font-size:15px;color:var(--muted)}
 .price{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;font-size:15px;color:var(--muted)}
+.prod .cost,.nx .cost{display:block;font-family:var(--f-display);font-size:26px;line-height:1;color:var(--ink);margin-top:14px}
 .price b{font-family:var(--f-display);font-weight:400;font-size:30px;color:var(--ink);line-height:1}
 
 /* Coming next */
@@ -93,6 +94,11 @@ html,body{overflow-x:clip}
 .nx h3{font-size:28px;line-height:1.05;margin:10px 0 6px}
 .nx p{margin:0;font-size:15px;color:var(--muted)}
 .pill{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:5px 11px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);color:var(--muted)}
+
+/* Our standard */
+.standard{padding-top:0}
+.standard .head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;border-top:1px solid var(--line);padding-top:clamp(40px,5vw,64px)}
+.standard .head .lede{margin:0}
 
 /* Founder note */
 .note{background:var(--sand)}
@@ -123,12 +129,13 @@ html,body{overflow-x:clip}
 .deposit .first b{color:var(--on-cocoa);font-weight:500}
 .deposit .act{display:flex;flex-direction:column;gap:10px;align-items:stretch}
 .deposit .act .btn{font-size:15px;padding:18px 24px}
+.deposit .small{margin:18px 0 0;font-size:12.5px;line-height:1.5;color:var(--on-cocoa-muted);max-width:34em}
 .deposit .act small{color:var(--on-cocoa-muted);font-size:12px;text-align:center}
 
 .sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:none}
 .sticky .btn{width:100%;box-shadow:0 8px 28px rgba(29,26,24,.25)}
 @media (max-width:900px){
-  .v2hero .wrap,.days .grid,.pair .head,.pair .row,.next .row,.note .grid,.talk .box,.deposit .panel{grid-template-columns:1fr;gap:22px}
+  .v2hero .wrap,.days .grid,.pair .head,.pair .row,.next .row,.standard .head,.note .grid,.talk .box,.deposit .panel{grid-template-columns:1fr;gap:22px}
   .v2hero{padding-top:14px}
   .v2hero::before{display:none}
   .v2hero .wrap{min-height:0}
@@ -172,9 +179,9 @@ html,body{overflow-x:clip}
   <section class="v2hero" aria-labelledby="h1">
     <div class="wrap">
       <div>
-        <div class="eyebrow">For women who relax their hair</div>
+        <div class="eyebrow">Care for your chemically straightened hair</div>
         <h1 id="h1">Feel done <em>longer.</em></h1>
-        <p class="sub">Salon day is the easy part. It's the days in between. STRAND starts at the scalp, with a simple pair that keeps it feeling calm and fresh. <b>Light, never greasy.</b></p>
+        <p class="sub">Care for every day between. A simple routine after the touch-up, made for your straightened hair. <b>Light, never heavy.</b></p>
         <div class="tally-wrap hero-form" id="join">
           <div class="eyebrow" style="margin-bottom:6px">Get early access. Free, no payment.</div>
           <iframe id="tally" data-src="https://tally.so/embed/q5ZBPY" width="100%" height="420" frameborder="0" marginheight="0" marginwidth="0" title="Get early access"></iframe>
@@ -193,15 +200,14 @@ html,body{overflow-x:clip}
         <div>
           <div class="eyebrow">The days between</div>
           <h2 id="h2days" style="margin-top:12px">You leave the salon feeling ready. <em>Then the week happens.</em></h2>
-          <p class="lede">When your hair isn't done, you don't feel done. We hear it again and again. The hard part is the stretch between touch-ups.</p>
         </div>
         <div>
           <ol class="pains">
             <li><span>DAY 1</span>Fresh. Smooth. You feel like yourself.</li>
-            <li><span>DAY 3</span>The itch starts. You scratch. Your roots go flat.</li>
-            <li><span>DAY 5</span>The style's gone, and you don't feel ready to face anyone.</li>
+            <li><span>DAY 3</span>The itch starts. Roots puff. The press goes flat.</li>
+            <li><span>DAY 5</span>It goes up in a bun. You don't feel done.</li>
           </ol>
-          <p class="nojudge">No judgment about relaxing. It's your hair and your choice. We just want the days in between to feel easier.</p>
+          <p class="nojudge">Your hair, your choice. We're here for every day between.</p>
         </div>
       </div>
     </div>
@@ -213,37 +219,31 @@ html,body{overflow-x:clip}
       <div class="head">
         <div>
           <div class="eyebrow">Start here</div>
-          <h2 id="h2pair" style="margin-top:12px">The scalp pair. <em>No guesswork.</em></h2>
+          <h2 id="h2pair" style="margin-top:12px">It starts at <em>the scalp.</em></h2>
         </div>
-        <p class="lede">One for wash day. One for every day after. That's the whole routine.</p>
+        <p class="lede">One for wash day. One for the days after. That's the routine.</p>
       </div>
       <div class="row">
         <article class="prod">
-          <div class="label" aria-hidden="true"><div><small>STRAND</small><b>Dream Scalp Treatment</b><i>Pre-wash</i></div></div>
+          <div class="label" aria-hidden="true"><div><small>STRAND</small><b>Dream Itch Pre-Wash</b><i>Wash day</i></div></div>
           <div>
             <span class="when">Wash day</span>
-            <h3>Dream Scalp Treatment</h3>
-            <p>Massage it in before you shampoo. It helps lift visible flakes so they rinse away, and leaves your scalp feeling calm and clean.</p>
-            <ul><li>Pre-wash</li><li>Calming</li><li>Rinses clean</li></ul>
+            <h3>Dream Itch Pre-Wash</h3>
+            <p>For a flaky, itchy scalp. Massage in, leave 5 minutes, then wash. Scalp only, so your lengths stay soft.</p>
+            <span class="cost">$24</span>
           </div>
         </article>
         <article class="prod b">
-          <div class="label" aria-hidden="true"><div><small>STRAND</small><b>Dream Scalp Drops</b><i>Leave-on</i></div></div>
+          <div class="label" aria-hidden="true"><div><small>STRAND</small><b>Dream Itch Drops</b><i>Days 3 to 7</i></div></div>
           <div>
-            <span class="when">Every day</span>
-            <h3>Dream Scalp Drops</h3>
-            <p>A few light drops along your parts. Soothes that mid-week itchy feeling without touching your style. Never greasy.</p>
-            <ul><li>Leave-on</li><li>Light</li><li>Not greasy</li></ul>
+            <span class="when">Days 3 to 7</span>
+            <h3>Dream Itch Drops</h3>
+            <p>A drink for a thirsty scalp. A featherweight serum that cools and soothes. Works in braids and under wigs.</p>
+            <span class="cost">$20</span>
           </div>
         </article>
       </div>
-      <div class="routine">
-        <div><span class="n">01</span><h4>Wash day</h4><p>Treatment on your scalp, then shampoo as usual.</p></div>
-        <div><span class="n">02</span><h4>Every day after</h4><p>Drops on your parts. Pat in. Done.</p></div>
-        <div><span class="n">03</span><h4>Day 5</h4><p>Still feel like yourself.</p></div>
-      </div>
-      <!-- TODO: confirm price wording ($20 per product or for the pair?) -->
-      <div class="price"><b>About $20</b><span>In development now. Founding batch first.</span></div>
+      <div class="price"><b>The scalp pair &middot; $38</b><span>In development. Founding batch first.</span></div>
     </div>
   </section>
 
@@ -254,13 +254,26 @@ html,body{overflow-x:clip}
       <h2 id="h2next" style="margin-top:12px">Then <em>the rest of the week.</em></h2>
       <div class="row">
         <article class="nx">
-          <div class="pic"><img src="img/dream-hair-oil.jpg" width="864" height="1184" alt="A bottle of STRAND Dream Hair Oil with a fine-mist sprayer" loading="lazy"></div>
-          <div class="txt"><span class="pill">Coming next</span><h3>Dream Hair Oil</h3><p>A light mist for your ends. Softness and shine without the weight.</p></div>
+          <div class="pic"><img src="img/dream-hair-oil.jpg" width="864" height="1184" alt="A bottle of STRAND Dream Hair Spritz with a fine-mist sprayer" loading="lazy"></div>
+          <div class="txt"><span class="pill">Coming next</span><h3>Dream Hair Spritz</h3><p>Light, weightless shine on your ends. Reapply on day 3 and day 5.</p><span class="cost">$20</span></div>
         </article>
         <article class="nx">
           <div class="pic mist" aria-hidden="true">Day 5</div>
-          <div class="txt"><span class="pill">Coming next</span><h3>Day 5 Mist</h3><p>A quick mist that brings back body and swing, so your press feels fresh to day 5.</p></div>
+          <div class="txt"><span class="pill">Coming next</span><h3>Dream Hair Mystify</h3><p>Keep the press. Keep the body. Through day 5.</p><span class="cost">$22</span></div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our standard -->
+  <section class="sec standard" aria-labelledby="h2std">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Our standard</div>
+          <h2 id="h2std" style="margin-top:12px">Nothing extra. <em>Everything for a reason.</em></h2>
+        </div>
+        <p class="lede">The full ingredient list on every pack, and a plain reason for anything that's there.</p>
       </div>
     </div>
   </section>
@@ -283,15 +296,16 @@ html,body{overflow-x:clip}
   </section>
 
   <!-- Talk to us -->
-  <!-- TODO: confirm hello@ inbox exists before going live -->
+  <!-- TODO: hello@strand-haircare.com must exist before going live -->
   <section class="sec talk" id="talk" aria-labelledby="h2talk">
     <div class="wrap">
       <div class="box">
         <div>
           <div class="eyebrow">Talk to us</div>
           <h2 id="h2talk" style="margin-top:12px">Tell us about <em>your hair.</em></h2>
+          <p class="lede">We're building this with you.</p>
           <ul>
-            <li>What happens around day 3?</li>
+            <li>What happens to your hair by day 3?</li>
             <li>What have you tried that didn't work?</li>
             <li>What do you wish just existed?</li>
           </ul>
@@ -299,7 +313,7 @@ html,body{overflow-x:clip}
         <div class="act">
           <a class="btn dark" data-email href="#talk">Write to Sarah</a>
           <span class="addr" data-email-text></span>
-          <p class="fine" style="margin:0">A real person reads these. Usually Sarah.</p>
+          <p class="fine" style="margin:0">Every email is read by Sarah, the founder.</p>
         </div>
       </div>
     </div>
@@ -312,9 +326,10 @@ html,body{overflow-x:clip}
       <div class="panel">
         <div>
           <div class="eyebrow">Founding batch</div>
-          <h2 id="h2dep" style="margin-top:12px">Reserve your spot in the founding batch: <em>$6.</em></h2>
-          <ul class="terms"><li>Refundable</li><li>Credited to your first order</li></ul>
-          <p class="first"><b>Which do you want first?</b> The Treatment, the Drops, or both. We'll ask when you reserve, and it helps us decide what to make first.</p>
+          <h2 id="h2dep" style="margin-top:12px">Reserve your spot for <em>$6.</em></h2>
+          <p class="first">Put $6 down and it comes off your first order. Founding members get first access and a say in what we make first.</p>
+          <p class="first"><b>Which do you want first?</b> The scalp pair, the Spritz or the Mystify. You'll pick when you reserve.</p>
+          <p class="small">Refundable anytime before we ship. Credited to your first order. Products are in development and launch timing isn't final.</p>
         </div>
         <div class="act">
           <!-- TODO: deposit link + lawyer-approved wording before live -->
@@ -339,13 +354,14 @@ html,body{overflow-x:clip}
 
 <script>
 (function(){
-  // TODO: confirm hello@ inbox exists before going live
+  // TODO: hello@strand-haircare.com must exist before going live
   var CONTACT_EMAIL='hello@strand-haircare.com';
-  var mail='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('About my hair');
+  var mail='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('My hair between touch-ups');
   document.querySelectorAll('[data-email]').forEach(function(a){ a.href=mail; });
   document.querySelectorAll('[data-email-text]').forEach(function(s){ s.textContent=CONTACT_EMAIL; });
   // TODO: deposit link + lawyer-approved wording before live (button is a placeholder)
-  document.querySelectorAll('[data-deposit]').forEach(function(a){ a.addEventListener('click',function(e){ if(a.getAttribute('href')==='#') e.preventDefault(); }); });
+  var DEPOSIT_URL='#';
+  document.querySelectorAll('[data-deposit]').forEach(function(a){ a.href=DEPOSIT_URL; a.addEventListener('click',function(e){ if(a.getAttribute('href')==='#') e.preventDefault(); }); });
 
   var FORM='q5ZBPY';
   var q=new URLSearchParams(location.search), utm={};
