@@ -52,6 +52,7 @@ html,body{overflow-x:clip}
 .days p.lede{color:var(--on-cocoa-muted);margin:0;font-size:19px}
 
 /* What straightening does */
+.navlinks{display:flex;align-items:center;gap:18px}.navtold{font-size:14px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}@media (max-width:600px){.navtold{display:none}}
 .learn .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .learn .facts{display:flex;flex-direction:column;gap:16px;font-size:17px;margin:0}
 .learn .facts p{margin:0}
@@ -60,6 +61,15 @@ html,body{overflow-x:clip}
 .learn .needs ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .learn .needs li{font-family:var(--f-display);font-size:clamp(21px,2vw,25px);line-height:1.25;padding:16px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:baseline}
 .learn .needs li::before{content:"";flex:none;width:16px;height:2px;background:var(--lav-deep);transform:translateY(-6px)}
+
+/* What you've told us */
+.told{padding-top:0}
+.told .qrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.told .q{margin:0;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.told blockquote{margin:0;font-family:var(--f-display);font-size:clamp(21px,2vw,25px);line-height:1.25}
+.told figcaption{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--lav-deep);font-weight:600}
+.told .qnote{margin:18px 0 0;font-size:13px;color:var(--muted)}
+@media (max-width:900px){.told .qrow{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.told .q{scroll-snap-align:start}}
 
 /* Three ways in */
 .ways{padding-top:0;padding-bottom:clamp(88px,10vw,128px)}
@@ -101,6 +111,7 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
   <div class="wrap">
     <a class="mark" href="#top" aria-label="STRAND home"><b>STRAND</b><i></i></a>
     <nav class="navlinks" aria-label="Main">
+      <a class="navtold" href="#told">What you've told us</a>
       <a class="ig" href="https://www.instagram.com/shopstrandhair/" target="_blank" rel="noopener" aria-label="Follow STRAND on Instagram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg><span>@shopstrandhair</span></a>
     </nav>
   </div>
@@ -111,9 +122,9 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
   <section class="v3hero" aria-labelledby="h1">
     <div class="wrap">
       <div class="copy">
-        <div class="eyebrow">STRAND &middot; For chemically straightened hair</div>
+        <div class="eyebrow">For chemically straightened hair</div>
         <h1 id="h1">Feel done <em>longer.</em></h1>
-        <p class="sub">Care for every day between touch-ups. We're building it with women who chemically straighten. Come build it with us.</p>
+        <p class="sub">Care for every day between touch-ups. We're building it with a community of women who chemically straighten. Come build it with us.</p>
         <p class="foryou">For you if you use relaxers, keratin or smoothing treatments.</p>
         <div class="stage" aria-hidden="true"></div>
         <div class="tally-wrap hero-form" id="join">
@@ -146,10 +157,10 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
           <div class="eyebrow">Know your hair</div>
           <h2 id="h2learn" style="margin:12px 0 26px">What chemical straightening does to <em>your hair</em></h2>
           <div class="facts">
-            <p>Relaxers change your hair's inner bonds for good. The straightened part stays straight. New growth comes in with your natural texture.</p>
+            <p>Relaxers change your hair's inner bonds permanently. The straightened part stays straight. New growth comes in with your natural texture.</p>
             <p>Where the two textures meet is the most fragile point on the strand. That's where breakage likes to start.</p>
-            <p>Keratin and smoothing treatments work differently. They soften the curl for a few months, then slowly wash out.</p>
-            <p>Either way, straightened hair loses moisture faster and gets weighed down more easily.</p>
+            <p>Keratin and smoothing treatments reshape those bonds for a while. The curl softens for a few months, then slowly comes back.</p>
+            <p>Either way, straightened hair loses moisture faster and gets weighed down more easily. So it needs its own kind of care.</p>
           </div>
         </div>
         <div class="needs">
@@ -164,19 +175,36 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
     </div>
   </section>
 
+  <!-- What you've told us -->
+  <section class="sec told" id="told" aria-labelledby="h2told">
+    <div class="wrap">
+      <div class="eyebrow">From the community</div>
+      <h2 id="h2told" style="margin:12px 0 26px">What you've <em>told us</em></h2>
+      <div class="qrow">
+          <figure class="q"><blockquote>&ldquo;When my hair is not done, I'm not done and it can ruin my whole day.&rdquo;</blockquote><figcaption>Relaxes at home</figcaption></figure>
+          <figure class="q"><blockquote>&ldquo;Once your hair is oily and weighed down&hellip; the press is just gone.&rdquo;</blockquote><figcaption>Salon relaxer &middot; 36</figcaption></figure>
+          <figure class="q"><blockquote>&ldquo;Anything that says it's for your scalp&hellip; I always choose that first.&rdquo;</blockquote><figcaption>Texturizer</figcaption></figure>
+          <figure class="q"><blockquote>&ldquo;Being natural is not for everybody.&rdquo;</blockquote><figcaption>Relaxes at home</figcaption></figure>
+          <figure class="q"><blockquote>&ldquo;Frizz breaks your hair off.&rdquo;</blockquote><figcaption>Salon relaxer</figcaption></figure>
+          <figure class="q"><blockquote>&ldquo;Finding moisturising products that I can reapply that won't weigh my hair down.&rdquo;</blockquote><figcaption>Relaxed &middot; from r/relaxedhair</figcaption></figure>
+      </div>
+      <p class="qnote">Shared anonymously by women in the STRAND community.</p>
+    </div>
+  </section>
+
   <!-- Three ways in -->
   <section class="sec ways" id="ways" aria-labelledby="h2ways">
     <div class="wrap">
       <div class="head">
-        <div class="eyebrow">Three ways in</div>
+        <div class="eyebrow">Join the community</div>
         <h2 id="h2ways" style="margin-top:12px">Come build it <em>with us.</em></h2>
       </div>
       <div class="row">
         <article class="way">
           <span class="n">01</span>
-          <h3>Be first.</h3>
-          <p>Join the list and hear before anyone else.</p>
-          <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="waitlist" target="_blank" rel="noopener">Join the list</a>
+          <h3>Join the community.</h3>
+          <p>Hear what we're making first, and what other women are telling us.</p>
+          <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="waitlist" target="_blank" rel="noopener">Join the community</a>
         </article>
         <article class="way">
           <span class="n">02</span>
@@ -187,7 +215,7 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
         <article class="way">
           <span class="n">03</span>
           <h3>Help shape it.</h3>
-          <p>What happens to your hair by day 3? What have you tried that didn't work? Founding members help decide what we make first. Your answers stay private.</p>
+          <p>What happens to your hair by day 3? What have you tried that didn't work? Founding members help decide what we make first.</p>
           <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="feedback" target="_blank" rel="noopener">Tell us about your hair</a>
         </article>
       </div>
