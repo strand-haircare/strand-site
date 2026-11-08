@@ -55,6 +55,8 @@ html,body{overflow-x:clip}
 /* What straightening does */
 .navlinks{display:flex;align-items:center;gap:18px}.navtold{font-size:14px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}.navdb{font-size:14px;color:var(--lav-deep);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}@media (max-width:600px){.navtold{display:none}}
 .learn .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.learn .xq{font-size:clamp(28px,3.6vw,46px);line-height:1.12;margin:14px 0 14px;max-width:24em}
+.learn .xsub{margin:0;font-size:18px;color:var(--lav-deep);font-weight:500}
 .learn .facts{display:flex;flex-direction:column;gap:16px;font-size:17px;margin:0}
 .learn .facts p{margin:0}
 .learn .facts .experts{margin-top:6px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:14px;font-size:16px}
@@ -85,7 +87,7 @@ html,body{overflow-x:clip}
 /* Three ways in */
 .ways{padding-top:0;padding-bottom:clamp(88px,10vw,128px)}
 .ways .head{border-top:1px solid var(--line);padding-top:clamp(40px,5vw,64px);margin-bottom:28px}
-.ways .row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ways .row{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .way{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 26px;display:flex;flex-direction:column;gap:12px;min-width:0}
 .way .n{font-size:11px;letter-spacing:.2em;color:var(--lav-deep);font-weight:600;font-stretch:115%}
 .way h3{font-size:clamp(28px,2.6vw,34px);line-height:1.05}
@@ -143,7 +145,7 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
         <h1 id="h1">Feel done <em>longer.</em></h1>
         <p class="sub">Care for every day between touch-ups. We're building it with a community of women who chemically straighten. Come build it with us.</p>
         <p class="foryou">For you if you use relaxers, keratin or smoothing treatments.</p>
-        <a class="dbcall" href="/days-between"><span>Free</span><b>The Days Between:</b> one helpful thing for your hair, every week. <u>See what it is</u></a>
+        <a class="dbcall" href="/days-between"><span>Free · our gift to you</span><b>The Days Between:</b> one helpful thing for your hair, every week. <u>See what it is</u></a>
         <div class="stage" aria-hidden="true"></div>
         <div class="tally-wrap hero-form" id="join">
           <div class="eyebrow" style="margin-bottom:6px">Join, and get The Days Between free</div>
@@ -171,30 +173,12 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
     </div>
   </section>
 
-  <!-- What chemical straightening does -->
+  <!-- From the experts -->
   <section class="sec learn" id="learn" aria-labelledby="h2learn">
     <div class="wrap">
-      <div class="grid">
-        <div>
-          <div class="eyebrow">Know your hair</div>
-          <h2 id="h2learn" style="margin:12px 0 26px">What chemical straightening does to <em>your hair</em></h2>
-          <div class="facts">
-            <p>Relaxers change your hair's inner bonds permanently. The straightened part stays straight. New growth comes in with your natural texture.</p>
-            <p>So every strand carries two textures. Gentle care where they meet keeps your style going longer.</p>
-            <p>Keratin and smoothing treatments reshape those bonds for a while. The curl softens for a few months, then slowly comes back.</p>
-            <p>Either way, straightened hair loves light moisture. Heavy products sit on top and flatten your style.</p>
-            <p class="experts"><span>From the experts we talked to</span>Care for chemically straightened hair has been overlooked for years, and most relaxers come with no aftercare guidance at all. With the right care, your hair can thrive between touch-ups. That's what we're building.</p>
-          </div>
-        </div>
-        <div class="needs">
-          <h3>What it needs between touch-ups</h3>
-          <ul>
-            <li>Moisture that never weighs it down</li>
-            <li>Less friction and tension: silk at night, softer updos</li>
-            <li>A calm scalp until the next wash day</li>
-          </ul>
-        </div>
-      </div>
+      <div class="eyebrow">From the experts we talked to</div>
+      <h2 id="h2learn" class="xq">Care for chemically straightened hair has been overlooked for years, and most relaxers come with no aftercare guidance at all. <em>With the right care, your hair can thrive between touch-ups.</em></h2>
+      <p class="xsub">That's what we're building.</p>
     </div>
   </section>
 
@@ -225,26 +209,20 @@ footer .made{flex-basis:100%;order:3;font-size:14px;color:var(--ink)}
     <div class="wrap">
       <div class="head">
         <div class="eyebrow">Join the community</div>
-        <h2 id="h2ways" style="margin-top:12px">Come build it <em>with us.</em></h2>
+        <h2 id="h2ways" style="margin-top:12px">Two ways <em>in.</em> Both free.</h2>
       </div>
       <div class="row">
         <article class="way">
           <span class="n">01</span>
-          <h3>Join the community.</h3>
-          <p>Hear what we're making first, and get The Days Between: one helpful thing a week from experts and women in the same boat.</p>
+          <h3>Come build it with us.</h3>
+          <p>Hear what we're making first, and help decide what we make. Your days between shape every choice.</p>
           <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="waitlist" target="_blank" rel="noopener">Join the community</a>
         </article>
         <article class="way">
           <span class="n">02</span>
-          <h3>Reserve your spot for $6.</h3>
-          <p>No charge today. When the founding batch is ready, you get first access and your $6 goes toward your first order. Change your mind anytime.</p>
-          <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="reserve6" target="_blank" rel="noopener">Reserve my spot</a>
-        </article>
-        <article class="way">
-          <span class="n">03</span>
-          <h3>Help shape it.</h3>
-          <p>After a touch-up or wash day, what changes first, and on what day? What have you tried that didn't work? Founding members help decide what we make first.</p>
-          <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="feedback" target="_blank" rel="noopener">Tell us about your hair</a>
+          <h3>Be part of The Days Between.</h3>
+          <p>Our gift to you: one helpful thing for your hair, every week. From scientists, stylists and women in the same boat. 30 seconds to read.</p>
+          <a class="btn dark" href="https://tally.so/r/q5ZBPY" data-tally-btn="days_between" target="_blank" rel="noopener">Send me The Days Between</a>
         </article>
       </div>
       <div class="share">
